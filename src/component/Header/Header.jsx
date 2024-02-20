@@ -9,32 +9,36 @@ import {
   Span,
   Wrap,
   WrapButton,
-  WrapLinksPages,
   WrapLogo,
+  WrapLogoHome,
+  WrapTeachersLogin,
 } from "./Header.styled";
 
 export const Header = () => {
   return (
     <Wrap>
-      <WrapLogo>
-        <Links to="/">
-          <Logo_flag />
-        </Links>
-        <LinksTitlte to="/">LearnLingo</LinksTitlte>
-      </WrapLogo>
-      <WrapLinksPages>
+      <WrapLogoHome>
+        <WrapLogo>
+          <Links to="/">
+            <Logo_flag />
+          </Links>
+          <LinksTitlte to="/">LearnLingo</LinksTitlte>
+        </WrapLogo>
         <LinksPages to="/">Home</LinksPages>
+      </WrapLogoHome>
+
+      <WrapTeachersLogin>
         <LinksPages to="teachers">Teachers</LinksPages>
-      </WrapLinksPages>
-      <WrapButton>
-        <ButtonLogin>
-          <Span>
-            <Login />
-          </Span>
-          Log in
-        </ButtonLogin>
-        <ButtonRegister>Registration</ButtonRegister>
-      </WrapButton>
+        <WrapButton>
+          <ButtonLogin type="button">
+            <Span>
+              <Login />
+            </Span>
+            Log in
+          </ButtonLogin>
+          <ButtonRegister type="button">Registration</ButtonRegister>
+        </WrapButton>
+      </WrapTeachersLogin>
     </Wrap>
   );
 };

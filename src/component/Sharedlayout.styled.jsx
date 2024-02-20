@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 export const Wrap = styled.div`
-  padding: 20px 64px 20px 64px;
+  width: 100%;
+  padding: 1.38vw 4.44vw 1.38vw 4.44vw;
   text-align: center;
 `;

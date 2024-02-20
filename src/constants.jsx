@@ -15,4 +15,5 @@ export const colors = {
   YELLOW_BUTTON: "#F4C550",
   YELLOW_HOVER_BUTTON: "#FFDC86",
   GREY_LABEL: "#8A8A89",
+  SILVER_BACKGROUND: "#F8F8F8",
 };
