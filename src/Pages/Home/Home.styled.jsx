@@ -34,6 +34,7 @@ export const Discrp = styled.p`
   font-weight: 400;
   line-height: 22px;
   letter-spacing: -0.32px;
+  width: 471px;
 `;
 export const Button = styled.button`
   border-radius: 12px;
