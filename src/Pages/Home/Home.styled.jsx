@@ -1,11 +1,13 @@
 import styled from "styled-components";
 import { colors } from "../../constants";
+import border from "../../assets/img/BorderDashedSvg.svg";
 
 export const Wrap = styled.div`
   width: 100%;
   margin-top: 20px;
   display: flex;
   gap: 24px;
+  margin-bottom: 24px;
 `;
 
 export const BlockDiscriptions = styled.div`
@@ -19,13 +21,39 @@ export const BlockDiscriptions = styled.div`
 `;
 
 export const Title = styled.h1`
-  max-width: 548px;
+  width: 548px;
   text-align: start;
+  margin-bottom: 32px;
 `;
 
-export const Discrp = styled.p``;
-export const Button = styled.button``;
+export const Discrp = styled.p`
+  text-align: start;
+  margin-bottom: 64px;
+  color: ${colors.BLACK_TEXT};
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 22px;
+  letter-spacing: -0.32px;
+`;
+export const Button = styled.button`
+  border-radius: 12px;
+  background-color: ${colors.YELLOW_BUTTON};
+  width: 267px;
+  height: 60px;
+  color: rgb(18, 20, 23);
+  font-family: Roboto;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 28px;
+  text-align: center;
+  border: none;
+  &:hover {
+    background-color: ${colors.YELLOW_HOVER_BUTTON};
+  }
+`;
+
 export const BlockImages = styled.div`
+  position: relative;
   max-width: 568px;
   border-radius: 30px;
   background: ${colors.LIGHT_YELLOW};
@@ -40,7 +68,6 @@ export const SpanLang = styled.span`
   background-color: ${colors.LIGHT_YELLOW};
   border-radius: 8px;
   max-width: 195px;
-
   font-style: italic;
   letter-spacing: -0.96px;
   font-size: 48px;
@@ -53,6 +80,7 @@ export const Span = styled.span`
   font-weight: 500;
   line-height: 56px;
   text-align: start;
+  font-style: normal;
   letter-spacing: -0.96px;
 `;
 export const SpanTheBest = styled.span`
@@ -62,4 +90,49 @@ export const SpanTheBest = styled.span`
   line-height: 56px;
   letter-spacing: -0.96;
   text-align: start;
+  font-style: normal;
+`;
+
+export const UnionDiv = styled.div`
+  position: absolute;
+  height: 176px;
+  overflow: hidden;
+  top: 354px;
+  left: 103.64px;
+`;
+
+export const AppelDiv = styled.div`
+  position: absolute;
+  left: 260.56px;
+`;
+
+export const StatisticList = styled.ul`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 1312px;
+  height: 116px;
+  gap: 100px;
+  /* border-style: 1.5px dashed rgb(244, 197, 80); */
+  /* border-radius: 30px; */
+  background-image: url(${border});
+`;
+export const Experienced = styled.li`
+  display: flex;
+  gap: 16px;
+`;
+export const Number = styled.p`
+  font-size: 28px;
+  font-weight: 500;
+  line-height: 32px;
+  letter-spacing: -0.56px;
+`;
+export const DiscrpStat = styled.p`
+  color: ${colors.BLACK_TEXT};
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 18px;
+  letter-spacing: -0.28px;
+  text-align: start;
+  width: ${(props) => props.width || "96px"};
 `;

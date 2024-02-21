@@ -35,6 +35,9 @@ export const LinksPages = styled(NavLink)`
   font-weight: 400;
   line-height: 20px;
   max-width: 66px;
+  &.active {
+    font-weight: 500;
+  }
 `;
 export const WrapButton = styled.div`
   display: flex;
