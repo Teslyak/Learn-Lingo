@@ -114,8 +114,6 @@ export const StatisticList = styled.ul`
   width: 1312px;
   height: 116px;
   gap: 100px;
-  /* border-style: 1.5px dashed rgb(244, 197, 80); */
-  /* border-radius: 30px; */
   background-image: url(${border});
 `;
 export const Experienced = styled.li`

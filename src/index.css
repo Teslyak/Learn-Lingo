@@ -32,11 +32,6 @@
   box-sizing: border-box;
 }
 
-#root {
-  width: 1440px;
-  margin-left: auto;
-  margin-right: auto;
-}
 /* Remove default margin */
 body,
 h1,

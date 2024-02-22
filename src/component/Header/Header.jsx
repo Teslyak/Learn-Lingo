@@ -1,3 +1,4 @@
+import propTypes from "prop-types";
 import { Login } from "../../assets/icons/Login";
 import { Logo_flag } from "../../assets/icons/Logo_flag";
 import {
@@ -14,7 +15,11 @@ import {
   WrapTeachersLogin,
 } from "./Header.styled";
 
-export const Header = () => {
+export const Header = ({ setIsOpenPopUp }) => {
+  const handleLogin = () => {
+    setIsOpenPopUp(true);
+  };
+
   return (
     <Wrap>
       <WrapLogoHome>
@@ -30,7 +35,7 @@ export const Header = () => {
       <WrapTeachersLogin>
         <LinksPages to="teachers">Teachers</LinksPages>
         <WrapButton>
-          <ButtonLogin type="button">
+          <ButtonLogin type="button" onClick={() => handleLogin()}>
             <Span>
               <Login />
             </Span>
@@ -41,4 +46,8 @@ export const Header = () => {
       </WrapTeachersLogin>
     </Wrap>
   );
+};
+
+Header.propTypes = {
+  setIsOpenPopUp: propTypes.func.isRequired,
 };
