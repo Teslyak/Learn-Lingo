@@ -3,6 +3,7 @@ import { colors } from "../../constants";
 import { Field } from "formik";
 
 export const WrapLogin = styled.div`
+  position: relative;
   width: 566px;
   height: 506px;
   background-color: #fff;
@@ -56,4 +57,17 @@ export const ButtonSubmit = styled.button`
     background-color: ${colors.YELLOW_HOVER_BUTTON};
   }
   border: none;
+  color: ${colors.BLACK_TEXT};
+  font-family: Roboto;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 28px;
+  text-align: center;
+`;
+
+export const WrapCloseBtn = styled.div`
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  cursor: pointer;
 `;

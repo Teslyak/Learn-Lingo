@@ -5,10 +5,12 @@ import {
   Discrp,
   Input,
   Title,
+  WrapCloseBtn,
   WrapLogin,
 } from "./LoginForm.styled";
 import propTypes from "prop-types";
 import * as yup from "yup";
+import { CloseBtn } from "../../assets/icons/CloseBtn";
 
 const initialValues = {
   login: "",
@@ -34,6 +36,9 @@ export const LoginForm = ({ onClose }) => {
           onSubmit={handleSubmit}
         >
           <Form>
+            <WrapCloseBtn onClick={onClose}>
+              <CloseBtn />
+            </WrapCloseBtn>
             <Title>Log In</Title>
             <Discrp>
               Welcome back! Please enter your credentials to access your account
