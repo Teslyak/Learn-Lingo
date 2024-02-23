@@ -6,6 +6,7 @@ import { Teachers } from "./Pages/Teachers/Teachers";
 
 import { LoginForm } from "./component/LoginForm/LoginForm";
 import { useState } from "react";
+import { SignInForm } from "./component/SignInForm/SignInForm";
 
 export function App() {
   const [isOpenPopUp, setIsOpenPopUp] = useState(false);
@@ -21,6 +22,9 @@ export function App() {
         </Route>
       </Routes>
       {isOpenPopUp ? <LoginForm onClose={() => setIsOpenPopUp(false)} /> : null}
+      {isOpenPopUp ? (
+        <SignInForm onClose={() => setIsOpenPopUp(false)} />
+      ) : null}
     </>
   );
 }

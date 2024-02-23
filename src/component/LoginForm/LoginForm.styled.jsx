@@ -70,4 +70,7 @@ export const WrapCloseBtn = styled.div`
   right: 20px;
   top: 20px;
   cursor: pointer;
+  &:hover svg path {
+    stroke-width: 3.5;
+  }
 `;

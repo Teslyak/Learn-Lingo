@@ -1,4 +1,5 @@
-export const CloseBtn = () => {
+import propTypes from "prop-types";
+export const CloseBtn = ({ strokeWidth }) => {
   return (
     <svg
       width="32.000000"
@@ -33,7 +34,7 @@ export const CloseBtn = () => {
           d="M24 8L8 24"
           stroke="#121417"
           strokeOpacity="1.000000"
-          strokeWidth="2.500000"
+          strokeWidth={strokeWidth}
           strokeLinejoin="round"
           strokeLinecap="round"
         />
@@ -42,11 +43,15 @@ export const CloseBtn = () => {
           d="M8 8L24 24"
           stroke="#121417"
           strokeOpacity="1.000000"
-          strokeWidth="2.500000"
+          strokeWidth={strokeWidth}
           strokeLinejoin="round"
           strokeLinecap="round"
         />
       </g>
     </svg>
   );
+};
+
+CloseBtn.propTypes = {
+  strokeWidth: propTypes.string.isRequired,
 };

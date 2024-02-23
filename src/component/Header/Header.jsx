@@ -20,6 +20,10 @@ export const Header = ({ setIsOpenPopUp }) => {
     setIsOpenPopUp(true);
   };
 
+  const handleSignIn = () => {
+    setIsOpenPopUp(true);
+  };
+
   return (
     <Wrap>
       <WrapLogoHome>
@@ -41,7 +45,9 @@ export const Header = ({ setIsOpenPopUp }) => {
             </Span>
             Log in
           </ButtonLogin>
-          <ButtonRegister type="button">Registration</ButtonRegister>
+          <ButtonRegister type="button" onClick={() => handleSignIn()}>
+            Registration
+          </ButtonRegister>
         </WrapButton>
       </WrapTeachersLogin>
     </Wrap>

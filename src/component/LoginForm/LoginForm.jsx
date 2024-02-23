@@ -37,7 +37,7 @@ export const LoginForm = ({ onClose }) => {
         >
           <Form>
             <WrapCloseBtn onClick={onClose}>
-              <CloseBtn />
+              <CloseBtn strokeWidth="2.5" />
             </WrapCloseBtn>
             <Title>Log In</Title>
             <Discrp>
