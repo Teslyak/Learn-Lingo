@@ -4,10 +4,10 @@ import { Header } from "./Header/Header";
 import { Outlet } from "react-router-dom";
 import { Wrap } from "./Sharedlayout.styled";
 
-export const SharedLayout = ({ setIsOpenPopUp }) => {
+export const SharedLayout = ({ setNamePopUp }) => {
   return (
     <Wrap>
-      <Header setIsOpenPopUp={setIsOpenPopUp} />
+      <Header setNamePopUp={setNamePopUp} />
       <Suspense fallback={<div>Loading....</div>}>
         <Outlet />
       </Suspense>
@@ -16,5 +16,5 @@ export const SharedLayout = ({ setIsOpenPopUp }) => {
 };
 
 SharedLayout.propTypes = {
-  setIsOpenPopUp: propTypes.func.isRequired,
+  setNamePopUp: propTypes.func.isRequired,
 };

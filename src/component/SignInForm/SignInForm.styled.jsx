@@ -5,7 +5,7 @@ import { Field } from "formik";
 export const WrapLogin = styled.div`
   position: relative;
   width: 566px;
-  height: 506px;
+
   background-color: #fff;
   padding: 64px;
   border-radius: 30px;

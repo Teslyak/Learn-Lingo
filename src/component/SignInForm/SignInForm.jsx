@@ -13,10 +13,12 @@ import * as yup from "yup";
 import { CloseBtn } from "../../assets/icons/CloseBtn";
 
 const initialValues = {
+  name: "",
   login: "",
   password: "",
 };
 const userSchema = yup.object().shape({
+  name: yup.string().required(),
   login: yup.string().required(),
   password: yup.string().min(6).max(16).required(),
 });
@@ -39,11 +41,13 @@ export const SignInForm = ({ onClose }) => {
             <WrapCloseBtn onClick={onClose}>
               <CloseBtn strokeWidth="2.5" />
             </WrapCloseBtn>
-            <Title>Log In</Title>
+            <Title>Registration</Title>
             <Discrp>
-              Welcome back! Please enter your credentials to access your account
-              and continue your search for an teacher.
+              Thank you for your interest in our platform! In order to register
+              <wbr />, we need some information. Please provide us with the
+              following information
             </Discrp>
+            <Input type="text" name="name" placeholder="Name" />
             <Input type="text" name="login" placeholder="Email" />
             <Input
               type="password"

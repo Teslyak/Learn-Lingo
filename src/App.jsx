@@ -4,27 +4,20 @@ import { SharedLayout } from "./component/SharedLayout";
 import { Home } from "./Pages/Home/Home";
 import { Teachers } from "./Pages/Teachers/Teachers";
 
-import { LoginForm } from "./component/LoginForm/LoginForm";
 import { useState } from "react";
-import { SignInForm } from "./component/SignInForm/SignInForm";
+import { SelectorPopUp } from "./component/SelectorPopUp";
 
 export function App() {
-  const [isOpenPopUp, setIsOpenPopUp] = useState(false);
+  const [namePopUp, setNamePopUp] = useState("");
   return (
     <>
       <Routes>
-        <Route
-          path="/"
-          element={<SharedLayout setIsOpenPopUp={setIsOpenPopUp} />}
-        >
+        <Route path="/" element={<SharedLayout setNamePopUp={setNamePopUp} />}>
           <Route index element={<Home />} />
           <Route path="teachers" element={<Teachers />} />
         </Route>
       </Routes>
-      {isOpenPopUp ? <LoginForm onClose={() => setIsOpenPopUp(false)} /> : null}
-      {isOpenPopUp ? (
-        <SignInForm onClose={() => setIsOpenPopUp(false)} />
-      ) : null}
+      <SelectorPopUp namePopUp={namePopUp} onClose={() => setNamePopUp("")} />
     </>
   );
 }

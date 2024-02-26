@@ -15,13 +15,13 @@ import {
   WrapTeachersLogin,
 } from "./Header.styled";
 
-export const Header = ({ setIsOpenPopUp }) => {
+export const Header = ({ setNamePopUp }) => {
   const handleLogin = () => {
-    setIsOpenPopUp(true);
+    setNamePopUp("login");
   };
 
   const handleSignIn = () => {
-    setIsOpenPopUp(true);
+    setNamePopUp("signin");
   };
 
   return (
@@ -55,5 +55,5 @@ export const Header = ({ setIsOpenPopUp }) => {
 };
 
 Header.propTypes = {
-  setIsOpenPopUp: propTypes.func.isRequired,
+  setNamePopUp: propTypes.func.isRequired,
 };
