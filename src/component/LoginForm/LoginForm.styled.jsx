@@ -74,3 +74,33 @@ export const WrapCloseBtn = styled.div`
     stroke-width: 3.5;
   }
 `;
+
+export const WrapInput = styled.div`
+  position: relative;
+`;
+export const ButtonEye = styled.button`
+  position: absolute;
+  background: none;
+  border: none;
+  right: 17px;
+  bottom: 117px;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+`;
+
+export const ErrorMessageLogin = styled.div`
+  position: absolute;
+  color: red;
+  font-size: 14px;
+  line-height: 1.28;
+  top: 55px;
+`;
+
+export const ErrorMessagePassword = styled.div`
+  position: absolute;
+  color: red;
+  font-size: 14px;
+  line-height: 1.28;
+  top: 128px;
+`;

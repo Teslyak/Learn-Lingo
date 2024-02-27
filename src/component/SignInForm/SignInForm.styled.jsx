@@ -5,7 +5,6 @@ import { Field } from "formik";
 export const WrapLogin = styled.div`
   position: relative;
   width: 566px;
-
   background-color: #fff;
   padding: 64px;
   border-radius: 30px;
@@ -45,7 +44,6 @@ export const Input = styled(Field)`
   &::placeholder {
     color: ${colors.BLACK_TEXT};
   }
-  margin-bottom: ${(props) => props.marginbottom || "18px"};
 `;
 
 export const ButtonSubmit = styled.button`
@@ -73,4 +71,45 @@ export const WrapCloseBtn = styled.div`
   &:hover svg path {
     stroke-width: 3.5;
   }
+`;
+export const WrapInput = styled.div`
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  gap: 18px;
+  margin-bottom: 40px;
+`;
+export const ButtonEye = styled.button`
+  position: absolute;
+  background: none;
+  border: none;
+  right: 17px;
+  bottom: 17px;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+`;
+
+export const ErrorMessageName = styled.div`
+  position: absolute;
+  color: red;
+  font-size: 14px;
+  line-height: 1.28;
+  top: -16px;
+`;
+
+export const ErrorMessageLogin = styled.div`
+  position: absolute;
+  color: red;
+  font-size: 14px;
+  line-height: 1.28;
+  top: 55px;
+`;
+
+export const ErrorMessagePassword = styled.div`
+  position: absolute;
+  color: red;
+  font-size: 14px;
+  line-height: 1.28;
+  top: 128px;
 `;

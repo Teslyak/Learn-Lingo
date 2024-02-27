@@ -1,16 +1,24 @@
-import { Formik, Form } from "formik";
+import { Formik, Form, ErrorMessage } from "formik";
 import BaseModalWrap from "../WrapPopUp/WrapPopUp";
 import {
+  ButtonEye,
   ButtonSubmit,
   Discrp,
+  ErrorMessageLogin,
+  ErrorMessageName,
+  ErrorMessagePassword,
   Input,
   Title,
   WrapCloseBtn,
+  WrapInput,
   WrapLogin,
 } from "./SignInForm.styled";
 import propTypes from "prop-types";
 import * as yup from "yup";
 import { CloseBtn } from "../../assets/icons/CloseBtn";
+import { EyeOn } from "../../assets/icons/EyeOn";
+import { useState } from "react";
+import { EyeOff } from "../../assets/icons/EyeOff";
 
 const initialValues = {
   name: "",
@@ -18,15 +26,38 @@ const initialValues = {
   password: "",
 };
 const userSchema = yup.object().shape({
-  name: yup.string().required(),
-  login: yup.string().required(),
-  password: yup.string().min(6).max(16).required(),
+  name: yup.string().required("Be sure to enter your name"),
+  login: yup
+    .string()
+    .matches(
+      /^\w+([\\.-]?\w+)*@\w+([\\.-]?\w+)*(\.\w{2,3})+$/,
+      "Incorret email"
+    )
+    .required("Be sure to enter your email"),
+  password: yup
+    .string()
+    .min(8, "Password must contain minimum 8 symbols")
+    .max(64, "Password must contain maximum 64 symbols")
+    .required("Be sure to enter your password"),
 });
 
 export const SignInForm = ({ onClose }) => {
+  const [isPasswordVisible, setIsPasswordVisible] = useState(false);
   const handleSubmit = (value, { resetForm }) => {
     console.log(value);
     resetForm();
+  };
+
+  const FormikErrorMessage = ({ name }) => {
+    switch (name) {
+      case "name":
+        return <ErrorMessage name={name} component={ErrorMessageName} />;
+      case "login":
+        return <ErrorMessage name={name} component={ErrorMessageLogin} />;
+      case "password":
+        return <ErrorMessage name={name} component={ErrorMessagePassword} />;
+      default:
+    }
   };
 
   return (
@@ -47,14 +78,27 @@ export const SignInForm = ({ onClose }) => {
               <wbr />, we need some information. Please provide us with the
               following information
             </Discrp>
-            <Input type="text" name="name" placeholder="Name" />
-            <Input type="text" name="login" placeholder="Email" />
-            <Input
-              type="password"
-              name="password"
-              placeholder="Password"
-              marginbottom="40px"
-            />
+            <WrapInput>
+              <Input type="text" name="name" placeholder="Name" />
+              <FormikErrorMessage name="name" />
+              <Input type="text" name="login" placeholder="Email" />
+              <FormikErrorMessage name="login" />
+              <Input
+                type={isPasswordVisible ? "text" : "password"}
+                name="password"
+                placeholder="Password"
+              />
+              <FormikErrorMessage name="password" />
+
+              <ButtonEye
+                type="button"
+                onClick={() => {
+                  setIsPasswordVisible(!isPasswordVisible);
+                }}
+              >
+                {isPasswordVisible ? <EyeOn /> : <EyeOff />}
+              </ButtonEye>
+            </WrapInput>
             <ButtonSubmit type="submit">Log In</ButtonSubmit>
           </Form>
         </Formik>
@@ -65,4 +109,5 @@ export const SignInForm = ({ onClose }) => {
 
 SignInForm.propTypes = {
   onClose: propTypes.func.isRequired,
+  name: propTypes.string,
 };
