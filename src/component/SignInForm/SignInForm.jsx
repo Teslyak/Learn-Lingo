@@ -19,7 +19,9 @@ import { CloseBtn } from "../../assets/icons/CloseBtn";
 import { EyeOn } from "../../assets/icons/EyeOn";
 import { useState } from "react";
 import { EyeOff } from "../../assets/icons/EyeOff";
-
+import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
+import { useDispatch } from "react-redux";
+import { setUser } from "../../../Redux/Auth/slice";
 const initialValues = {
   name: "",
   login: "",
@@ -43,7 +45,26 @@ const userSchema = yup.object().shape({
 
 export const SignInForm = ({ onClose }) => {
   const [isPasswordVisible, setIsPasswordVisible] = useState(false);
+  const dispatch = useDispatch();
+
   const handleSubmit = (value, { resetForm }) => {
+    const auth = getAuth();
+    createUserWithEmailAndPassword(
+      auth,
+      value.login,
+      value.password,
+      value.name
+    ).then(({ user }) => {
+      console.log(user);
+      dispatch(
+        setUser({
+          name: user.name,
+          email: user.email,
+          id: user.id,
+          token: user.accessToken,
+        })
+      );
+    });
     console.log(value);
     resetForm();
   };

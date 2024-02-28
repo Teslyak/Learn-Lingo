@@ -6,7 +6,7 @@ import { Teachers } from "./Pages/Teachers/Teachers";
 
 import { useState } from "react";
 import { SelectorPopUp } from "./component/SelectorPopUp";
-import "./../firebase";
+
 export function App() {
   const [namePopUp, setNamePopUp] = useState("");
   return (
