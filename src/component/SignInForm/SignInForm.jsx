@@ -19,17 +19,16 @@ import { CloseBtn } from "../../assets/icons/CloseBtn";
 import { EyeOn } from "../../assets/icons/EyeOn";
 import { useState } from "react";
 import { EyeOff } from "../../assets/icons/EyeOff";
-import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 import { useDispatch } from "react-redux";
-import { setUser } from "../../../Redux/Auth/slice";
+import { register } from "../../../Redux/Auth/operations";
 const initialValues = {
   name: "",
-  login: "",
+  email: "",
   password: "",
 };
 const userSchema = yup.object().shape({
   name: yup.string().required("Be sure to enter your name"),
-  login: yup
+  email: yup
     .string()
     .matches(
       /^\w+([\\.-]?\w+)*@\w+([\\.-]?\w+)*(\.\w{2,3})+$/,
@@ -48,24 +47,7 @@ export const SignInForm = ({ onClose }) => {
   const dispatch = useDispatch();
 
   const handleSubmit = (value, { resetForm }) => {
-    const auth = getAuth();
-    createUserWithEmailAndPassword(
-      auth,
-      value.login,
-      value.password,
-      value.name
-    ).then(({ user }) => {
-      console.log(user);
-      dispatch(
-        setUser({
-          name: user.name,
-          email: user.email,
-          id: user.id,
-          token: user.accessToken,
-        })
-      );
-    });
-    console.log(value);
+    dispatch(register({ value }));
     resetForm();
   };
 
@@ -73,7 +55,7 @@ export const SignInForm = ({ onClose }) => {
     switch (name) {
       case "name":
         return <ErrorMessage name={name} component={ErrorMessageName} />;
-      case "login":
+      case "email":
         return <ErrorMessage name={name} component={ErrorMessageLogin} />;
       case "password":
         return <ErrorMessage name={name} component={ErrorMessagePassword} />;
@@ -102,8 +84,8 @@ export const SignInForm = ({ onClose }) => {
             <WrapInput>
               <Input type="text" name="name" placeholder="Name" />
               <FormikErrorMessage name="name" />
-              <Input type="text" name="login" placeholder="Email" />
-              <FormikErrorMessage name="login" />
+              <Input type="text" name="email" placeholder="Email" />
+              <FormikErrorMessage name="email" />
               <Input
                 type={isPasswordVisible ? "text" : "password"}
                 name="password"

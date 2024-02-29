@@ -18,13 +18,15 @@ import { CloseBtn } from "../../assets/icons/CloseBtn";
 import { useState } from "react";
 import { EyeOn } from "../../assets/icons/EyeOn";
 import { EyeOff } from "../../assets/icons/EyeOff";
+import { useDispatch } from "react-redux";
+import { logining } from "../../../Redux/Auth/operations";
 
 const initialValues = {
-  login: "",
+  email: "",
   password: "",
 };
 const userSchema = yup.object().shape({
-  login: yup
+  email: yup
     .string()
     .matches(
       /^\w+([\\.-]?\w+)*@\w+([\\.-]?\w+)*(\.\w{2,3})+$/,
@@ -40,13 +42,15 @@ const userSchema = yup.object().shape({
 
 export const LoginForm = ({ onClose }) => {
   const [isPasswordVisible, setIsPasswordVisible] = useState(false);
+  const dispatch = useDispatch();
   const handleSubmit = (value, { resetForm }) => {
+    dispatch(logining({ value }));
     console.log(value);
     resetForm();
   };
   const FormikErrorMessage = ({ name }) => {
     switch (name) {
-      case "login":
+      case "email":
         return <ErrorMessage name={name} component={ErrorMessageLogin} />;
       case "password":
         return <ErrorMessage name={name} component={ErrorMessagePassword} />;
@@ -72,8 +76,8 @@ export const LoginForm = ({ onClose }) => {
               and continue your search for an teacher.
             </Discrp>
             <WrapInput>
-              <Input type="text" name="login" placeholder="Email" />
-              <FormikErrorMessage name="login" />
+              <Input type="text" name="email" placeholder="Email" />
+              <FormikErrorMessage name="email" />
               <Input
                 type={isPasswordVisible ? "text" : "password"}
                 name="password"
