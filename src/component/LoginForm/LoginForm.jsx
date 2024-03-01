@@ -46,6 +46,7 @@ export const LoginForm = ({ onClose }) => {
   const handleSubmit = (value, { resetForm }) => {
     dispatch(logining({ value }));
     console.log(value);
+
     resetForm();
   };
   const FormikErrorMessage = ({ name }) => {

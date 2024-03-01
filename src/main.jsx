@@ -5,14 +5,17 @@ import "./index.css";
 import { BrowserRouter } from "react-router-dom";
 import "./firebase.js";
 import { Provider } from "react-redux";
-import { store } from "../Redux/store.jsx";
+import { store, persistor } from "../Redux/store.jsx";
+import { PersistGate } from "redux-persist/integration/react";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <BrowserRouter basename="/Learn-Lingo">
-      <Provider store={store}>
-        <App />
-      </Provider>
-    </BrowserRouter>
+    <PersistGate loading={null} persistor={persistor}>
+      <BrowserRouter basename="/Learn-Lingo">
+        <Provider store={store}>
+          <App />
+        </Provider>
+      </BrowserRouter>
+    </PersistGate>
   </React.StrictMode>
 );

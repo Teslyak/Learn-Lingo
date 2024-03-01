@@ -14,8 +14,11 @@ import {
   WrapLogoHome,
   WrapTeachersLogin,
 } from "./Header.styled";
+import { useAuth } from "../../../Hooks/use-auth";
+import { UserMenu } from "../UserMenu/UserMenu";
 
 export const Header = ({ setNamePopUp }) => {
+  const { isLoggedIn } = useAuth();
   const handleLogin = () => {
     setNamePopUp("login");
   };
@@ -38,6 +41,22 @@ export const Header = ({ setNamePopUp }) => {
 
       <WrapTeachersLogin>
         <LinksPages to="teachers">Teachers</LinksPages>
+        {isLoggedIn ? (
+          <UserMenu />
+        ) : (
+          <WrapButton>
+            <ButtonLogin type="button" onClick={() => handleLogin()}>
+              <Span>
+                <Login />
+              </Span>
+              Log in
+            </ButtonLogin>
+            <ButtonRegister type="button" onClick={() => handleSignIn()}>
+              Registration
+            </ButtonRegister>
+          </WrapButton>
+        )}
+
         <WrapButton>
           <ButtonLogin type="button" onClick={() => handleLogin()}>
             <Span>
