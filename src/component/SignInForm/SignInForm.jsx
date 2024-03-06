@@ -21,6 +21,8 @@ import { useState } from "react";
 import { EyeOff } from "../../assets/icons/EyeOff";
 import { useDispatch } from "react-redux";
 import { register } from "../../../Redux/Auth/operations";
+import { useAuth } from "../../../Hooks/use-auth";
+import { Navigate } from "react-router-dom";
 const initialValues = {
   name: "",
   email: "",
@@ -45,6 +47,7 @@ const userSchema = yup.object().shape({
 export const SignInForm = ({ onClose }) => {
   const [isPasswordVisible, setIsPasswordVisible] = useState(false);
   const dispatch = useDispatch();
+  const { isLoggedIn } = useAuth();
 
   const handleSubmit = (value, { resetForm }) => {
     dispatch(register({ value }));
@@ -62,6 +65,9 @@ export const SignInForm = ({ onClose }) => {
       default:
     }
   };
+  if (isLoggedIn) {
+    return <Navigate to="/" />;
+  }
 
   return (
     <BaseModalWrap onClose={onClose}>

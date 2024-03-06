@@ -45,29 +45,18 @@ export const Header = ({ setNamePopUp }) => {
           <UserMenu />
         ) : (
           <WrapButton>
-            <ButtonLogin type="button" onClick={() => handleLogin()}>
+            <ButtonLogin type="button" onClick={handleLogin}>
               <Span>
                 <Login />
               </Span>
               Log in
             </ButtonLogin>
+
             <ButtonRegister type="button" onClick={() => handleSignIn()}>
               Registration
             </ButtonRegister>
           </WrapButton>
         )}
-
-        <WrapButton>
-          <ButtonLogin type="button" onClick={() => handleLogin()}>
-            <Span>
-              <Login />
-            </Span>
-            Log in
-          </ButtonLogin>
-          <ButtonRegister type="button" onClick={() => handleSignIn()}>
-            Registration
-          </ButtonRegister>
-        </WrapButton>
       </WrapTeachersLogin>
     </Wrap>
   );

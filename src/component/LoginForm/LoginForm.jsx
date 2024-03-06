@@ -20,6 +20,8 @@ import { EyeOn } from "../../assets/icons/EyeOn";
 import { EyeOff } from "../../assets/icons/EyeOff";
 import { useDispatch } from "react-redux";
 import { logining } from "../../../Redux/Auth/operations";
+import { useAuth } from "../../../Hooks/use-auth";
+import { Navigate } from "react-router-dom";
 
 const initialValues = {
   email: "",
@@ -43,6 +45,8 @@ const userSchema = yup.object().shape({
 export const LoginForm = ({ onClose }) => {
   const [isPasswordVisible, setIsPasswordVisible] = useState(false);
   const dispatch = useDispatch();
+  const { isLoggedIn } = useAuth();
+
   const handleSubmit = (value, { resetForm }) => {
     dispatch(logining({ value }));
     console.log(value);
@@ -59,7 +63,9 @@ export const LoginForm = ({ onClose }) => {
     }
   };
 
-  return (
+  return isLoggedIn ? (
+    <Navigate to="//" />
+  ) : (
     <BaseModalWrap onClose={onClose}>
       <WrapLogin>
         <Formik
