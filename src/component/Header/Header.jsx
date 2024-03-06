@@ -16,15 +16,18 @@ import {
 } from "./Header.styled";
 import { useAuth } from "../../../Hooks/use-auth";
 import { UserMenu } from "../UserMenu/UserMenu";
+import { Navigate } from "react-router-dom";
 
 export const Header = ({ setNamePopUp }) => {
   const { isLoggedIn } = useAuth();
   const handleLogin = () => {
     setNamePopUp("login");
+    return <Navigate to="/login" />;
   };
 
   const handleSignIn = () => {
     setNamePopUp("signin");
+    return <Navigate to="/login" />;
   };
 
   return (

@@ -9,6 +9,7 @@ import { SelectorPopUp } from "./component/SelectorPopUp";
 
 export function App() {
   const [namePopUp, setNamePopUp] = useState("");
+
   return (
     <>
       <Routes>
@@ -17,6 +18,7 @@ export function App() {
           <Route path="teachers" element={<Teachers />} />
         </Route>
       </Routes>
+
       <SelectorPopUp namePopUp={namePopUp} onClose={() => setNamePopUp("")} />
     </>
   );

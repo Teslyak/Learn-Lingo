@@ -19,6 +19,7 @@ import {
   Wrap,
 } from "./Home.styled";
 import stickerImage from "../../assets/img/sticker.png";
+import { Link } from "react-router-dom";
 
 export const Home = () => {
   return (
@@ -36,7 +37,9 @@ export const Home = () => {
             Elevate your language proficiency to new heights by connecting with
             highly qualified and experienced tutors.
           </Discrp>
-          <Button type="button">Get started</Button>
+          <Link to="teachers">
+            <Button type="button">Get started</Button>
+          </Link>
         </BlockDiscriptions>
         <BlockImages>
           <Sticker src={stickerImage} alt="sticker" />
