@@ -4,11 +4,18 @@ import { SharedLayout } from "./component/SharedLayout";
 import { Home } from "./Pages/Home/Home";
 import { Teachers } from "./Pages/Teachers/Teachers";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { SelectorPopUp } from "./component/SelectorPopUp";
+import { useDispatch } from "react-redux";
+import { refreshUser } from "../Redux/Auth/operations";
 
 export function App() {
   const [namePopUp, setNamePopUp] = useState("");
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(refreshUser());
+  }, [dispatch]);
 
   return (
     <>

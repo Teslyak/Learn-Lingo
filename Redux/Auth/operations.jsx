@@ -11,9 +11,7 @@ export const register = createAsyncThunk(
   "auth/register",
   async ({ value }, thunkAPI) => {
     const { name, email, password } = value;
-
     const auth = getAuth();
-
     try {
       const response = await createUserWithEmailAndPassword(
         auth,
@@ -43,7 +41,6 @@ export const logining = createAsyncThunk(
   "auth/login",
   async ({ value }, thunkAPI) => {
     const { email, password } = value;
-
     const auth = getAuth();
     try {
       const response = await signInWithEmailAndPassword(auth, email, password);
@@ -68,22 +65,34 @@ export const logOut = createAsyncThunk("auth/logout", async (_, thunkAPI) => {
   }
 });
 
-// export const refreshUser = createAsyncThunk(
-//   "auth/refresh",
-//   async (_, thunkAPI) => {
-//     const state = thunkAPI.getState();
-//     const persistedToken = state.auth.token;
+export const refreshUser = createAsyncThunk(
+  "auth/refresh",
+  async (_, thunkAPI) => {
+    const state = thunkAPI.getState();
+    const persistedToken = state.auth.token;
 
-//     if (persistedToken === null) {
-//       return thunkAPI.rejectWithValue("Unable to fetch user");
-//     }
+    const auth = getAuth();
 
-//     try {
-//       setAuthHeader(persistedToken);
-//       const responce = await refreshLogin();
-//       return responce.data;
-//     } catch (error) {
-//       return thunkAPI.rejectWithValue(error.message);
-//     }
-//   }
-// );
+    if (persistedToken === null) {
+      return thunkAPI.rejectWithValue("Unable to fetch user");
+    }
+    try {
+      return new Promise((resolve, reject) => {
+        auth.onAuthStateChanged((user) => {
+          if (user) {
+            resolve({
+              name: user.displayName,
+              email: user.email,
+              token: user.accessToken,
+              id: user.uid,
+            });
+          } else {
+            reject("Unable to fetch user");
+          }
+        });
+      });
+    } catch (error) {
+      return thunkAPI.rejectWithValue(error.message);
+    }
+  }
+);
