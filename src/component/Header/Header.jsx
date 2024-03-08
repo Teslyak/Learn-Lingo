@@ -14,7 +14,7 @@ import {
   WrapLogoHome,
   WrapTeachersLogin,
 } from "./Header.styled";
-import { useAuth } from "../../../Hooks/use-auth";
+import { useAuth } from "../../Hooks/use-auth";
 import { UserMenu } from "../UserMenu/UserMenu";
 import { Navigate } from "react-router-dom";
 

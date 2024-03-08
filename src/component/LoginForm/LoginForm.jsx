@@ -19,7 +19,7 @@ import { useState } from "react";
 import { EyeOn } from "../../assets/icons/EyeOn";
 import { EyeOff } from "../../assets/icons/EyeOff";
 import { useDispatch } from "react-redux";
-import { logining } from "../../../Redux/Auth/operations";
+import { logining } from "../../Redux/Auth/operations";
 
 const initialValues = {
   email: "",

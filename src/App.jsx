@@ -7,7 +7,7 @@ import { Teachers } from "./Pages/Teachers/Teachers";
 import { useEffect, useState } from "react";
 import { SelectorPopUp } from "./component/SelectorPopUp";
 import { useDispatch } from "react-redux";
-import { refreshUser } from "../Redux/Auth/operations";
+import { refreshUser } from "./Redux/Auth/operations";
 
 export function App() {
   const [namePopUp, setNamePopUp] = useState("");

@@ -11,15 +11,20 @@ import {
   REGISTER,
 } from "redux-persist";
 import storage from "redux-persist/lib/storage";
+import { teachersReducer } from "./Catalog/slice";
 
 const authPersistConfig = {
   key: "auth",
   storage,
   whitelist: ["token"],
 };
-
+const teachersPersistConfig = {
+  key: "teachers",
+  storage,
+};
 const rootReducer = combineReducers({
   auth: persistReducer(authPersistConfig, authReducer),
+  teachers: persistReducer(teachersPersistConfig, teachersReducer),
 });
 
 export const store = configureStore({
