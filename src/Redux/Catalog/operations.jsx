@@ -10,7 +10,6 @@ export const getTeachers = createAsyncThunk(
       const snapshot = await get(starCountRef);
       const data = snapshot.val();
       console.log(data);
-      return data;
     } catch (erorr) {
       return thunkAPI.rejectWithValue(erorr.message);
     }

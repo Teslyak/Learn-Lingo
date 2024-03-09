@@ -1,7 +1,8 @@
 import { getTeachers } from "../../Redux/Catalog/operations";
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
-import { TeachersCard } from "../../TeachersListCards/TeachersCard";
+import { TeachersList } from "../../component/TeachersListCards/TeachersList";
+import { Wrap } from "./Teachers.styled";
 
 export const Teachers = () => {
   const dispatch = useDispatch();
@@ -10,5 +11,9 @@ export const Teachers = () => {
     dispatch(getTeachers());
   }, [dispatch]);
 
-  return <TeachersCard />;
+  return (
+    <Wrap>
+      <TeachersList />
+    </Wrap>
+  );
 };
