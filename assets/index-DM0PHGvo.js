@@ -2990,7 +2990,7 @@ FIREBASE: `))}restoreState_(){this.tryAuth(),this.tryAppCheck();for(const e of t
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- */function EM(t){fL(Gs),Os(new gi("database",(e,{instanceIdentifier:n})=>{const r=e.getProvider("app").getImmediate(),i=e.getProvider("auth-internal"),s=e.getProvider("app-check-internal");return gM(r,i,s,n)},"PUBLIC").setMultipleInstances(!0)),Cr(fv,hv,t),Cr(fv,hv,"esm2017")}An.prototype.simpleListen=function(t,e){this.sendRequest("q",{p:t},e)};An.prototype.echo=function(t,e){this.sendRequest("echo",{d:t},e)};EM();const Hl=Oa("teachers/getTeachers",async(t,e)=>{try{const n=ET(),r=dM(n),s=(await fM(r)).val();console.log(s)}catch(n){return e.rejectWithValue(n.message)}}),SM=t=>t.teachers.teachersCard,CM=A.li`
+ */function EM(t){fL(Gs),Os(new gi("database",(e,{instanceIdentifier:n})=>{const r=e.getProvider("app").getImmediate(),i=e.getProvider("auth-internal"),s=e.getProvider("app-check-internal");return gM(r,i,s,n)},"PUBLIC").setMultipleInstances(!0)),Cr(fv,hv,t),Cr(fv,hv,"esm2017")}An.prototype.simpleListen=function(t,e){this.sendRequest("q",{p:t},e)};An.prototype.echo=function(t,e){this.sendRequest("echo",{d:t},e)};EM();const Hl=Oa("teachers/getTeachers",async(t,e)=>{try{const n=ET(),r=dM(n),s=(await fM(r)).val();return console.log(s),s}catch(n){return e.rejectWithValue(n.message)}}),SM=t=>t.teachers.teachersCard,CM=A.li`
   width: 1184px;
   height: 328px;
   padding: 24px;
