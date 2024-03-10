@@ -6,6 +6,7 @@ import {
   signOut,
   updateProfile,
 } from "firebase/auth";
+import toast from "react-hot-toast";
 
 export const register = createAsyncThunk(
   "auth/register",
@@ -31,7 +32,7 @@ export const register = createAsyncThunk(
         name: user.displayName,
       };
     } catch (error) {
-      console.log(error);
+      toast.error("Please check your data and try again");
       return thunkAPI.rejectWithValue(error.message);
     }
   }
@@ -52,6 +53,7 @@ export const logining = createAsyncThunk(
         name: user.displayName,
       };
     } catch (error) {
+      toast.error("Please check your data and try again");
       return thunkAPI.rejectWithValue(error.message);
     }
   }
