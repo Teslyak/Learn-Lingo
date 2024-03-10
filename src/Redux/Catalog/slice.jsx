@@ -15,6 +15,9 @@ const teachersSlice = createSlice({
     setFavorite: (state, action) => {
       state.favorite.push(action.payload);
     },
+    delFavorite: (state, action) => {
+      state.favorite = state.favorite.filter((e) => e.id !== action.payload.id);
+    },
   },
 
   extraReducers: (builder) => {
@@ -34,4 +37,5 @@ const teachersSlice = createSlice({
   },
 });
 export const { setFavorite } = teachersSlice.actions;
+export const { delFavorite } = teachersSlice.actions;
 export const teachersReducer = teachersSlice.reducer;

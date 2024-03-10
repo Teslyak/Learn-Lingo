@@ -1,10 +1,10 @@
-export const Heart = () => {
+export const Heart = ({fill,}) => {
   return (
     <svg
       width="24.645044"
       height="21.751221"
       viewBox="0 0 24.645 21.7512"
-      fill="none"
+      fill={fill}
       xmlns="http://www.w3.org/2000/svg"
       xmlnsXlink="http://www.w3.org/1999/xlink"
     >

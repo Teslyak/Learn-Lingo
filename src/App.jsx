@@ -9,7 +9,7 @@ import { SelectorPopUp } from "./component/SelectorPopUp";
 import { useDispatch } from "react-redux";
 import { refreshUser } from "./Redux/Auth/operations";
 import { PrivateRoute } from "./component/PrivateRoute";
-import { Favorites } from "./Pages/Favorites/Favorites";
+import { Favorites } from "./Pages/Favorites/Favorite";
 
 export function App() {
   const [namePopUp, setNamePopUp] = useState("");

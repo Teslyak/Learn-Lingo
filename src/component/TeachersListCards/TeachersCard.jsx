@@ -27,8 +27,12 @@ import { Heart } from "../../assets/icons/Heart";
 import { useState } from "react";
 import { TeachersReadMore } from "./TeachersReadMore";
 import { BtnTrialLesson } from "./BtnTrialLesson";
+import { useDispatch, useSelector } from "react-redux";
+import { selectFavorite } from "../../Redux/Catalog/selectors";
+import { delFavorite, setFavorite } from "../../Redux/Catalog/slice";
 export const TeachersCard = (props) => {
   const {
+    id,
     avatar_url,
     conditions,
     experience,
@@ -43,10 +47,17 @@ export const TeachersCard = (props) => {
     surname,
   } = props;
   const [isReadMore, setIsReadMore] = useState(false);
+  const favorite = useSelector(selectFavorite);
+  const dispatch = useDispatch();
+  const isFavorite = favorite.some((e) => e.id === id);
+
   const handleReadMore = () => {
     setIsReadMore(true);
   };
- 
+  const handleFavorite = () => {
+    !isFavorite ? dispatch(setFavorite(props)) : dispatch(delFavorite(props));
+  };
+
   return (
     <WrapCard>
       <WrapAvatar>
@@ -56,8 +67,12 @@ export const TeachersCard = (props) => {
         <ImgAvatar src={avatar_url} alt="avatar" />
       </WrapAvatar>
       <WrapDiscrp>
-        <WrapHeart >
-          <Heart />
+        <WrapHeart onClick={() => handleFavorite()}>
+          {isFavorite ? (
+            <Heart fill={"#F4C550"} />
+          ) : (
+            <Heart fill={"transparent"} />
+          )}
         </WrapHeart>
         <Statistic>
           <ListStatistic>
