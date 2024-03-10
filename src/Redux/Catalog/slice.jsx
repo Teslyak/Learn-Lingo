@@ -3,6 +3,7 @@ import { getTeachers } from "./operations";
 
 const teachersInitState = {
   teachersCard: [],
+  favorite: [],
   isLoading: false,
   error: "",
 };
@@ -10,6 +11,12 @@ const teachersInitState = {
 const teachersSlice = createSlice({
   name: "teachers",
   initialState: teachersInitState,
+  reducers: {
+    setFavorite: (state, action) => {
+      state.favorite.push(action.payload);
+    },
+  },
+
   extraReducers: (builder) => {
     builder
       .addCase(getTeachers.pending, (state) => {
@@ -17,7 +24,7 @@ const teachersSlice = createSlice({
       })
       .addCase(getTeachers.fulfilled, (state, action) => {
         state.isLoading = false;
-        state.teachersCard = [...state.teachersCard, ...action.payload];
+        state.teachersCard = action.payload;
         state.error = "";
       })
       .addCase(getTeachers.rejected, (state, action) => {
@@ -26,5 +33,5 @@ const teachersSlice = createSlice({
       });
   },
 });
-
+export const { setFavorite } = teachersSlice.actions;
 export const teachersReducer = teachersSlice.reducer;

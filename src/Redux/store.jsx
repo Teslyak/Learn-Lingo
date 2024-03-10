@@ -21,6 +21,7 @@ const authPersistConfig = {
 const teachersPersistConfig = {
   key: "teachers",
   storage,
+  blacklist: ["teachersCard"],
 };
 const rootReducer = combineReducers({
   auth: persistReducer(authPersistConfig, authReducer),

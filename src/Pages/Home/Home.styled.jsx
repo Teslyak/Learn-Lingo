@@ -4,7 +4,7 @@ import border from "../../assets/img/BorderDashedSvg.svg";
 
 export const Wrap = styled.div`
   width: 100%;
-  margin-top: 20px;
+
   display: flex;
   gap: 24px;
   margin-bottom: 24px;

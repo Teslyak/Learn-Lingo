@@ -8,6 +8,8 @@ import { useEffect, useState } from "react";
 import { SelectorPopUp } from "./component/SelectorPopUp";
 import { useDispatch } from "react-redux";
 import { refreshUser } from "./Redux/Auth/operations";
+import { PrivateRoute } from "./component/PrivateRoute";
+import { Favorites } from "./Pages/Favorites/Favorites";
 
 export function App() {
   const [namePopUp, setNamePopUp] = useState("");
@@ -23,6 +25,14 @@ export function App() {
         <Route path="/" element={<SharedLayout setNamePopUp={setNamePopUp} />}>
           <Route index element={<Home />} />
           <Route path="teachers" element={<Teachers />} />
+          <Route
+            path="favorites"
+            element={
+              <PrivateRoute>
+                <Favorites />
+              </PrivateRoute>
+            }
+          />
         </Route>
       </Routes>
 

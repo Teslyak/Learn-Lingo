@@ -6,12 +6,14 @@ import { Wrap } from "./Sharedlayout.styled";
 
 export const SharedLayout = ({ setNamePopUp }) => {
   return (
-    <Wrap>
+    <>
       <Header setNamePopUp={setNamePopUp} />
-      <Suspense fallback={<div>Loading....</div>}>
-        <Outlet />
-      </Suspense>
-    </Wrap>
+      <Wrap>
+        <Suspense fallback={<div>Loading....</div>}>
+          <Outlet />
+        </Suspense>
+      </Wrap>
+    </>
   );
 };
 

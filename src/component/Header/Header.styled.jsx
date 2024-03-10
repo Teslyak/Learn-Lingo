@@ -8,10 +8,12 @@ export const Links = styled(NavLink)`
 
 export const Wrap = styled.header`
   max-width: 1184px;
-  height: 48px;
+  //height: 48px;
   margin: 0 auto;
   display: flex;
   gap: 28px;
+  padding: 20px 64px;
+  justify-content: center;
 `;
 
 export const LinksTitlte = styled(NavLink)`

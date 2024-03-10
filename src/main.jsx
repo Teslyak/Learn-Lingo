@@ -7,13 +7,16 @@ import "./firebase.js";
 import { Provider } from "react-redux";
 import { store, persistor } from "./Redux/store.jsx";
 import { PersistGate } from "redux-persist/integration/react";
+import MyStyleSheetManager from "./component/TeachersListCards/TeachersReadMore.styled.jsx";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <PersistGate loading={null} persistor={persistor}>
       <BrowserRouter basename="/Learn-Lingo/">
         <Provider store={store}>
-          <App />
+          <MyStyleSheetManager>
+            <App />
+          </MyStyleSheetManager>
         </Provider>
       </BrowserRouter>
     </PersistGate>

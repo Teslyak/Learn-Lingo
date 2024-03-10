@@ -44,6 +44,7 @@ export const Header = ({ setNamePopUp }) => {
 
       <WrapTeachersLogin>
         <LinksPages to="teachers">Teachers</LinksPages>
+        {isLoggedIn && <LinksPages to="favorites">Favorites</LinksPages>}
         {isLoggedIn ? (
           <UserMenu />
         ) : (

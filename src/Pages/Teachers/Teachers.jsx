@@ -8,7 +8,11 @@ export const Teachers = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(getTeachers());
+    const controller = new AbortController();
+    dispatch(getTeachers({ signal: controller.signal }));
+    return () => {
+      return controller.abort();
+    };
   }, [dispatch]);
 
   return (
