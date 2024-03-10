@@ -1,5 +1,5 @@
 import propTypes from "prop-types";
-import toast, { Toaster } from "react-hot-toast";
+import toast from "react-hot-toast";
 import {
   BtnReadMore,
   ImgAvatar,

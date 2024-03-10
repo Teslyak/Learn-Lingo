@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { colors } from "../../constants";
-import border from "../../assets/img/BorderDashedSvg.svg";
+import border from "../../assets/img/DashedBorderPNG.png";
 
 export const Wrap = styled.div`
   width: 100%;
@@ -115,6 +115,7 @@ export const StatisticList = styled.ul`
   height: 116px;
   gap: 100px;
   background-image: url(${border});
+  background-size: cover;
 `;
 export const Experienced = styled.li`
   display: flex;
