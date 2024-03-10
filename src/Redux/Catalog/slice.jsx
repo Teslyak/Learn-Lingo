@@ -6,6 +6,7 @@ const teachersInitState = {
   favorite: [],
   isLoading: false,
   error: "",
+  card: [],
 };
 
 const teachersSlice = createSlice({
@@ -17,6 +18,9 @@ const teachersSlice = createSlice({
     },
     delFavorite: (state, action) => {
       state.favorite = state.favorite.filter((e) => e.id !== action.payload.id);
+    },
+    setCard: (state, action) => {
+      state.card = action.payload;
     },
   },
 
@@ -36,6 +40,8 @@ const teachersSlice = createSlice({
       });
   },
 });
+
+export const { setCard } = teachersSlice.actions;
 export const { setFavorite } = teachersSlice.actions;
 export const { delFavorite } = teachersSlice.actions;
 export const teachersReducer = teachersSlice.reducer;
