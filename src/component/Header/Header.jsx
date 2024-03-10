@@ -42,7 +42,7 @@ export const Header = ({ setNamePopUp }) => {
         <LinksPages to="/">Home</LinksPages>
       </WrapLogoHome>
 
-      <WrapTeachersLogin>
+      <WrapTeachersLogin isLoggedIn={isLoggedIn}>
         <LinksPages to="teachers">Teachers</LinksPages>
         {isLoggedIn && <LinksPages to="favorites">Favorites</LinksPages>}
         {isLoggedIn ? (

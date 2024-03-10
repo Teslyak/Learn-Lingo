@@ -91,6 +91,6 @@ export const WrapLogoHome = styled.div`
 
 export const WrapTeachersLogin = styled.div`
   display: flex;
-  gap: 268px;
+  gap: ${(props) => (props.isLoggedIn ? "110px" : "268px")};
   align-items: center;
 `;

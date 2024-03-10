@@ -10,6 +10,7 @@ import { useDispatch } from "react-redux";
 import { refreshUser } from "./Redux/Auth/operations";
 import { PrivateRoute } from "./component/PrivateRoute";
 import { Favorites } from "./Pages/Favorites/Favorite";
+import { Toaster } from "react-hot-toast";
 
 export function App() {
   const [namePopUp, setNamePopUp] = useState("");
@@ -37,6 +38,7 @@ export function App() {
       </Routes>
 
       <SelectorPopUp namePopUp={namePopUp} onClose={() => setNamePopUp("")} />
+      <Toaster />
     </>
   );
 }

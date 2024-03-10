@@ -1,4 +1,5 @@
 import propTypes from "prop-types";
+import toast, { Toaster } from "react-hot-toast";
 import {
   BtnReadMore,
   ImgAvatar,
@@ -30,6 +31,7 @@ import { BtnTrialLesson } from "./BtnTrialLesson";
 import { useDispatch, useSelector } from "react-redux";
 import { selectFavorite } from "../../Redux/Catalog/selectors";
 import { delFavorite, setFavorite } from "../../Redux/Catalog/slice";
+import { useAuth } from "../../Hooks/use-auth";
 export const TeachersCard = (props) => {
   const {
     id,
@@ -50,12 +52,20 @@ export const TeachersCard = (props) => {
   const favorite = useSelector(selectFavorite);
   const dispatch = useDispatch();
   const isFavorite = favorite.some((e) => e.id === id);
-
+  const auth = useAuth();
   const handleReadMore = () => {
     setIsReadMore(true);
   };
   const handleFavorite = () => {
-    !isFavorite ? dispatch(setFavorite(props)) : dispatch(delFavorite(props));
+    if (!auth.isLoggedIn) {
+      toast.error("Please enter LogIn or Registration ");
+      return;
+    }
+    if (!isFavorite && auth.isLoggedIn) {
+      dispatch(setFavorite(props));
+    } else {
+      dispatch(delFavorite(props));
+    }
   };
 
   return (
@@ -68,7 +78,7 @@ export const TeachersCard = (props) => {
       </WrapAvatar>
       <WrapDiscrp>
         <WrapHeart onClick={() => handleFavorite()}>
-          {isFavorite ? (
+          {isFavorite && auth.isLoggedIn ? (
             <Heart fill={"#F4C550"} />
           ) : (
             <Heart fill={"transparent"} />
@@ -130,6 +140,7 @@ export const TeachersCard = (props) => {
 };
 
 TeachersCard.propTypes = {
+  id: propTypes.string,
   avatar_url: propTypes.string,
   conditions: propTypes.arrayOf(propTypes.string),
   experience: propTypes.string,
