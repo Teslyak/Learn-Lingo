@@ -101,7 +101,7 @@ export const TeachersCard = (props) => {
               Rating:&nbsp;{rating}
             </StyleLi>
             <StyleLi>
-              Price / 1 hour:&nbsp;<SpanPrice>{price_per_hour}</SpanPrice>
+              Price / 1 hour:&nbsp;<SpanPrice>{price_per_hour}$</SpanPrice>
             </StyleLi>
           </ListStatistic>
         </Statistic>

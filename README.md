@@ -1,8 +1,6 @@
-# React + Vite
+![App Learn Lingo](./public/images/home.png)  
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+The Learn-Lingo project was created to make it easier to find a language tutor. The application has everything you need to find a quick and high-quality tutor.
+The application was created using [Create React App]
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+![Firebase Authentication Realtime Database](./public//images/Logining.png)
