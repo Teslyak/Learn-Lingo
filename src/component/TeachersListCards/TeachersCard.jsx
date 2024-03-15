@@ -47,6 +47,7 @@ export const TeachersCard = (props) => {
     rating,
     reviews,
     surname,
+    setNamePopUp,
   } = props;
   const [isReadMore, setIsReadMore] = useState(false);
   const favorite = useSelector(selectFavorite);
@@ -133,7 +134,7 @@ export const TeachersCard = (props) => {
             <LiLevels key={idx}>#{level}</LiLevels>
           ))}
         </ListLevel>
-        {isReadMore && <BtnTrialLesson />}
+        {isReadMore && <BtnTrialLesson setNamePopUp={setNamePopUp} />}
       </WrapDiscrp>
     </WrapCard>
   );

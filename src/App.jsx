@@ -29,7 +29,10 @@ export function App() {
       <Routes>
         <Route path="/" element={<SharedLayout setNamePopUp={setNamePopUp} />}>
           <Route index element={<Home />} />
-          <Route path="teachers" element={<Teachers />} />
+          <Route
+            path="teachers"
+            element={<Teachers setNamePopUp={setNamePopUp} />}
+          />
           <Route
             path="favorites"
             element={

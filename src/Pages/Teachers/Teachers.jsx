@@ -4,7 +4,7 @@ import { useDispatch } from "react-redux";
 import { TeachersList } from "../../component/TeachersListCards/TeachersList";
 import { Wrap } from "./Teachers.styled";
 
-export const Teachers = () => {
+export const Teachers = ({ setNamePopUp }) => {
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -17,7 +17,7 @@ export const Teachers = () => {
 
   return (
     <Wrap>
-      <TeachersList />
+      <TeachersList setNamePopUp={setNamePopUp} />
     </Wrap>
   );
 };

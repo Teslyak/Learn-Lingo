@@ -4,7 +4,7 @@ import { TeachersCard } from "./TeachersCard";
 import { ButtonStyle, StyleList } from "./TeachersList.styled";
 import { useState } from "react";
 
-export const TeachersList = () => {
+export const TeachersList = ({ setNamePopUp }) => {
   const teachersData = useSelector(selectTeachers);
   const [page, setPage] = useState(4);
   const disputch = useDispatch();
@@ -18,7 +18,13 @@ export const TeachersList = () => {
     <>
       <StyleList>
         {cardTeachers.map((teacher) => {
-          return <TeachersCard key={teacher.id} {...teacher} />;
+          return (
+            <TeachersCard
+              key={teacher.id}
+              setNamePopUp={setNamePopUp}
+              {...teacher}
+            />
+          );
         })}
       </StyleList>
       {page === cardTeachers.length && (
