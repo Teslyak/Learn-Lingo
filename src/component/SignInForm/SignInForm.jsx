@@ -101,7 +101,7 @@ export const SignInForm = ({ onClose }) => {
                 {isPasswordVisible ? <EyeOn /> : <EyeOff />}
               </ButtonEye>
             </WrapInput>
-            <ButtonSubmit type="submit">Log In</ButtonSubmit>
+            <ButtonSubmit type="submit">Sign Up</ButtonSubmit>
           </Form>
         </Formik>
       </WrapLogin>

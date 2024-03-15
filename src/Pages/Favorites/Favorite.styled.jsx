@@ -5,4 +5,5 @@ export const Wrap = styled.div`
   width: 1440px;
   background: rgb(248, 248, 248);
   padding: 96px 128px 96px 128px;
+  height: 100vh;
 `;

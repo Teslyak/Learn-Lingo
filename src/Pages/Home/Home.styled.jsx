@@ -2,6 +2,10 @@ import styled from "styled-components";
 import { colors } from "../../constants";
 import border from "../../assets/img/DashedBorderPNG.png";
 
+export const WrapContainer = styled.div`
+  padding: 0px 64px 32px 64px;
+`;
+
 export const Wrap = styled.div`
   width: 100%;
 
