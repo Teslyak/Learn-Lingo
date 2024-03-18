@@ -25,14 +25,14 @@ import { Status } from '../../assets/icons/Status';
 import { LessonBook } from '../../assets/icons/LessonBook';
 import { StarCard } from '../../assets/icons/StarCard';
 import { Heart } from '../../assets/icons/Heart';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { TeachersReadMore } from './TeachersReadMore';
 import { BtnTrialLesson } from './BtnTrialLesson';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectFavorite } from '../../Redux/Catalog/selectors';
 import { delFavorite, setFavorite } from '../../Redux/Catalog/slice';
 import { useAuth } from '../../Hooks/use-auth';
-export const TeachersCard = props => {
+export const TeachersCard = ({ setNamePopUp, ...props }) => {
   const {
     id,
     avatar_url,
@@ -47,13 +47,14 @@ export const TeachersCard = props => {
     rating,
     reviews,
     surname,
-    setNamePopUp,
   } = props;
+
   const [isReadMore, setIsReadMore] = useState(false);
   const favorite = useSelector(selectFavorite);
   const dispatch = useDispatch();
   const isFavorite = favorite.some(e => e.id === id);
   const auth = useAuth();
+
   const handleReadMore = () => {
     setIsReadMore(true);
   };

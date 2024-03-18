@@ -1,6 +1,6 @@
-import { NavLink } from "react-router-dom";
-import styled from "styled-components";
-import { colors } from "../../constants";
+import { NavLink } from 'react-router-dom';
+import styled from 'styled-components';
+import { colors } from '../../constants';
 
 export const Links = styled(NavLink)`
   height: 28px;
@@ -91,6 +91,5 @@ export const WrapLogoHome = styled.div`
 
 export const WrapTeachersLogin = styled.div`
   display: flex;
-  gap: ${(props) => (props.isLoggedIn ? "110px" : "268px")};
   align-items: center;
 `;

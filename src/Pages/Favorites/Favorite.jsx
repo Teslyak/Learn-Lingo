@@ -4,10 +4,16 @@ import { Wrap } from './Favorite.styled';
 import { selectFavorite } from '../../Redux/Catalog/selectors';
 import { NoFavorites } from '../../component/Favorites/NoFavorites';
 
-export default function Favorites() {
+export default function Favorites({ setNamePopUp }) {
   const favorites = useSelector(selectFavorite);
 
   return (
-    <Wrap>{favorites.length > 0 ? <FavoriteList /> : <NoFavorites />}</Wrap>
+    <Wrap>
+      {favorites.length > 0 ? (
+        <FavoriteList setNamePopUp={setNamePopUp} />
+      ) : (
+        <NoFavorites />
+      )}
+    </Wrap>
   );
 }

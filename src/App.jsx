@@ -33,7 +33,7 @@ export function App() {
             path="favorites"
             element={
               <PrivateRoute>
-                <Favorites />
+                <Favorites setNamePopUp={setNamePopUp} />
               </PrivateRoute>
             }
           />

@@ -1,5 +1,5 @@
-import { Navigate } from "react-router-dom";
-import { useAuth } from "../Hooks/use-auth";
+import { Navigate } from 'react-router-dom';
+import { useAuth } from '../Hooks/use-auth';
 export const PrivateRoute = ({ children }) => {
   const auth = useAuth();
   const isLoggedIn = auth.isLoggedIn;

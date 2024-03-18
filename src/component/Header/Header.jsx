@@ -1,6 +1,6 @@
-import propTypes from "prop-types";
-import { Login } from "../../assets/icons/Login";
-import { Logo_flag } from "../../assets/icons/Logo_flag";
+import propTypes from 'prop-types';
+import { Login } from '../../assets/icons/Login';
+import { Logo_flag } from '../../assets/icons/Logo_flag';
 import {
   ButtonLogin,
   ButtonRegister,
@@ -13,20 +13,20 @@ import {
   WrapLogo,
   WrapLogoHome,
   WrapTeachersLogin,
-} from "./Header.styled";
-import { useAuth } from "../../Hooks/use-auth";
-import { UserMenu } from "../UserMenu/UserMenu";
-import { Navigate } from "react-router-dom";
+} from './Header.styled';
+import { useAuth } from '../../Hooks/use-auth';
+import { UserMenu } from '../UserMenu/UserMenu';
+import { Navigate } from 'react-router-dom';
 
 export const Header = ({ setNamePopUp }) => {
   const { isLoggedIn } = useAuth();
   const handleLogin = () => {
-    setNamePopUp("login");
+    setNamePopUp('login');
     return <Navigate to="/login" />;
   };
 
   const handleSignIn = () => {
-    setNamePopUp("signin");
+    setNamePopUp('signin');
     return <Navigate to="/login" />;
   };
 
@@ -42,7 +42,7 @@ export const Header = ({ setNamePopUp }) => {
         <LinksPages to="/">Home</LinksPages>
       </WrapLogoHome>
 
-      <WrapTeachersLogin isLoggedIn={isLoggedIn}>
+      <WrapTeachersLogin style={{ gap: isLoggedIn ? '110px' : '268px' }}>
         <LinksPages to="teachers">Teachers</LinksPages>
         {isLoggedIn && <LinksPages to="favorites">Favorites</LinksPages>}
         {isLoggedIn ? (

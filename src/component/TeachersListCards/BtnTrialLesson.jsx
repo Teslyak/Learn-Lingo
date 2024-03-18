@@ -2,13 +2,8 @@ import { BtnTrialLessons } from './BtnTrialLesson.styled';
 import { setCard } from '../../Redux/Catalog/slice';
 import { useDispatch } from 'react-redux';
 
-export const BtnTrialLesson = ({
-  setNamePopUp,
-  id,
-  avatar_url,
-  name,
-  surname,
-}) => {
+export const BtnTrialLesson = ({ setNamePopUp, ...props }) => {
+  const { id, avatar_url, name, surname } = props;
   const dispatch = useDispatch();
   const handleBtnTrialLesson = () => {
     setNamePopUp('trial');

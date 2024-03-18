@@ -1,23 +1,22 @@
-import { selectTeachers } from "../../Redux/Catalog/selectors";
-import { useDispatch, useSelector } from "react-redux";
-import { TeachersCard } from "./TeachersCard";
-import { ButtonStyle, StyleList } from "./TeachersList.styled";
-import { useState } from "react";
+import { selectTeachers } from '../../Redux/Catalog/selectors';
+import { useSelector } from 'react-redux';
+import { TeachersCard } from './TeachersCard';
+import { ButtonStyle, StyleList } from './TeachersList.styled';
+import { useState } from 'react';
 
 export const TeachersList = ({ setNamePopUp }) => {
   const teachersData = useSelector(selectTeachers);
   const [page, setPage] = useState(4);
-  const disputch = useDispatch();
+
   const handleLoadMore = () => {
-    setPage((prevState) => prevState + 4);
-    disputch(teachersData.slice(0, page));
+    setPage(prevState => prevState + 4);
   };
   const cardTeachers = teachersData.slice(0, page);
 
   return (
     <>
       <StyleList>
-        {cardTeachers.map((teacher) => {
+        {cardTeachers.map(teacher => {
           return (
             <TeachersCard
               key={teacher.id}
