@@ -25,7 +25,7 @@ import { Status } from '../../assets/icons/Status';
 import { LessonBook } from '../../assets/icons/LessonBook';
 import { StarCard } from '../../assets/icons/StarCard';
 import { Heart } from '../../assets/icons/Heart';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { TeachersReadMore } from './TeachersReadMore';
 import { BtnTrialLesson } from './BtnTrialLesson';
 import { useDispatch, useSelector } from 'react-redux';
