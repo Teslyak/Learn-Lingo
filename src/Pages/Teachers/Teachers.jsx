@@ -1,10 +1,10 @@
-import { getTeachers } from "../../Redux/Catalog/operations";
-import { useEffect } from "react";
-import { useDispatch } from "react-redux";
-import { TeachersList } from "../../component/TeachersListCards/TeachersList";
-import { Wrap } from "./Teachers.styled";
+import { getTeachers } from '../../Redux/Catalog/operations';
+import { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import { TeachersList } from '../../component/TeachersListCards/TeachersList';
+import { Wrap } from './Teachers.styled';
 
-export const Teachers = ({ setNamePopUp }) => {
+export default function Teachers({ setNamePopUp }) {
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -20,4 +20,4 @@ export const Teachers = ({ setNamePopUp }) => {
       <TeachersList setNamePopUp={setNamePopUp} />
     </Wrap>
   );
-};
+}

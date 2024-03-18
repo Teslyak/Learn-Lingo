@@ -1,5 +1,5 @@
-import { Appel } from "../../assets/icons/Appel";
-import { Union } from "../../assets/icons/Union";
+import { Appel } from '../../assets/icons/Appel';
+import { Union } from '../../assets/icons/Union';
 import {
   AppelDiv,
   BlockDiscriptions,
@@ -18,11 +18,11 @@ import {
   UnionDiv,
   Wrap,
   WrapContainer,
-} from "./Home.styled";
-import stickerImage from "../../assets/img/sticker.png";
-import { Link } from "react-router-dom";
+} from './Home.styled';
+import stickerImage from '../../assets/img/sticker.png';
+import { Link } from 'react-router-dom';
 
-export const Home = () => {
+export default function Home() {
   return (
     <>
       <WrapContainer>
@@ -30,8 +30,8 @@ export const Home = () => {
           <BlockDiscriptions>
             <Title>
               <Span>Unlock your potential with</Span>
-              {"  "}
-              <SpanTheBest>the best</SpanTheBest> <SpanLang>language</SpanLang>{" "}
+              {'  '}
+              <SpanTheBest>the best</SpanTheBest> <SpanLang>language</SpanLang>{' '}
               <SpanTheBest>tutors</SpanTheBest>
             </Title>
             <Discrp>
@@ -75,4 +75,4 @@ export const Home = () => {
       </WrapContainer>
     </>
   );
-};
+}

@@ -2,6 +2,7 @@ import { BtnTrialLessons } from "./BtnTrialLesson.styled";
 
 export const BtnTrialLesson = ({ setNamePopUp }) => {
   const handleBtnTrialLesson = () => {
+   
     setNamePopUp("trial");
   };
   return (

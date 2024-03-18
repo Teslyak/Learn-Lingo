@@ -1,8 +1,8 @@
-import { Audio } from "react-loader-spinner";
-import { CenteredContainer } from "./Loader.styled";
-import { colors } from "../../constants";
+import { Audio } from 'react-loader-spinner';
+import { CenteredContainer } from './Loader.styled';
+import { colors } from '../../constants';
 
-export const Loader = () => {
+const Loader = () => {
   return (
     <CenteredContainer>
       <Audio
@@ -17,3 +17,5 @@ export const Loader = () => {
     </CenteredContainer>
   );
 };
+
+export default Loader;
