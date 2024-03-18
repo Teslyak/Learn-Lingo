@@ -1,5 +1,5 @@
-import { Formik, Form, ErrorMessage } from "formik";
-import BaseModalWrap from "../WrapPopUp/WrapPopUp";
+import { Formik, Form, ErrorMessage } from 'formik';
+import BaseModalWrap from '../WrapPopUp/WrapPopUp';
 import {
   ButtonEye,
   ButtonSubmit,
@@ -11,33 +11,33 @@ import {
   WrapCloseBtn,
   WrapInput,
   WrapLogin,
-} from "./LoginForm.styled";
-import propTypes from "prop-types";
-import * as yup from "yup";
-import { CloseBtn } from "../../assets/icons/CloseBtn";
-import { useState } from "react";
-import { EyeOn } from "../../assets/icons/EyeOn";
-import { EyeOff } from "../../assets/icons/EyeOff";
-import { useDispatch } from "react-redux";
-import { logining } from "../../Redux/Auth/operations";
+} from './LoginForm.styled';
+import propTypes from 'prop-types';
+import * as yup from 'yup';
+import { CloseBtn } from '../../assets/icons/CloseBtn';
+import { useState } from 'react';
+import { EyeOn } from '../../assets/icons/EyeOn';
+import { EyeOff } from '../../assets/icons/EyeOff';
+import { useDispatch } from 'react-redux';
+import { logining } from '../../Redux/Auth/operations';
 
 const initialValues = {
-  email: "",
-  password: "",
+  email: '',
+  password: '',
 };
 const userSchema = yup.object().shape({
   email: yup
     .string()
     .matches(
       /^\w+([\\.-]?\w+)*@\w+([\\.-]?\w+)*(\.\w{2,3})+$/,
-      "Incorret email"
+      'Incorret email'
     )
-    .required("Be sure to enter your email"),
+    .required('Be sure to enter your email'),
   password: yup
     .string()
-    .min(8, "Password must contain minimum 8 symbols")
-    .max(64, "Password must contain maximum 64 symbols")
-    .required("Be sure to enter your password"),
+    .min(8, 'Password must contain minimum 8 symbols')
+    .max(64, 'Password must contain maximum 64 symbols')
+    .required('Be sure to enter your password'),
 });
 
 export const LoginForm = ({ onClose }) => {
@@ -46,15 +46,14 @@ export const LoginForm = ({ onClose }) => {
 
   const handleSubmit = (value, { resetForm }) => {
     dispatch(logining({ value }));
-    onClose();
-
     resetForm();
+    onClose();
   };
   const FormikErrorMessage = ({ name }) => {
     switch (name) {
-      case "email":
+      case 'email':
         return <ErrorMessage name={name} component={ErrorMessageLogin} />;
-      case "password":
+      case 'password':
         return <ErrorMessage name={name} component={ErrorMessagePassword} />;
       default:
     }
@@ -81,7 +80,7 @@ export const LoginForm = ({ onClose }) => {
               <Input type="text" name="email" placeholder="Email" />
               <FormikErrorMessage name="email" />
               <Input
-                type={isPasswordVisible ? "text" : "password"}
+                type={isPasswordVisible ? 'text' : 'password'}
                 name="password"
                 placeholder="Password"
                 marginbottom="40px"

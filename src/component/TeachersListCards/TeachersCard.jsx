@@ -1,5 +1,5 @@
-import propTypes from "prop-types";
-import toast from "react-hot-toast";
+import propTypes from 'prop-types';
+import toast from 'react-hot-toast';
 import {
   BtnReadMore,
   ImgAvatar,
@@ -20,19 +20,19 @@ import {
   WrapStar,
   WrapSvgLessonBook,
   WrapSvgStatus,
-} from "./TeachersCard.styled";
-import { Status } from "../../assets/icons/Status";
-import { LessonBook } from "../../assets/icons/LessonBook";
-import { StarCard } from "../../assets/icons/StarCard";
-import { Heart } from "../../assets/icons/Heart";
-import { useState } from "react";
-import { TeachersReadMore } from "./TeachersReadMore";
-import { BtnTrialLesson } from "./BtnTrialLesson";
-import { useDispatch, useSelector } from "react-redux";
-import { selectFavorite } from "../../Redux/Catalog/selectors";
-import { delFavorite, setFavorite } from "../../Redux/Catalog/slice";
-import { useAuth } from "../../Hooks/use-auth";
-export const TeachersCard = (props) => {
+} from './TeachersCard.styled';
+import { Status } from '../../assets/icons/Status';
+import { LessonBook } from '../../assets/icons/LessonBook';
+import { StarCard } from '../../assets/icons/StarCard';
+import { Heart } from '../../assets/icons/Heart';
+import { useState } from 'react';
+import { TeachersReadMore } from './TeachersReadMore';
+import { BtnTrialLesson } from './BtnTrialLesson';
+import { useDispatch, useSelector } from 'react-redux';
+import { selectFavorite } from '../../Redux/Catalog/selectors';
+import { delFavorite, setFavorite } from '../../Redux/Catalog/slice';
+import { useAuth } from '../../Hooks/use-auth';
+export const TeachersCard = props => {
   const {
     id,
     avatar_url,
@@ -52,14 +52,14 @@ export const TeachersCard = (props) => {
   const [isReadMore, setIsReadMore] = useState(false);
   const favorite = useSelector(selectFavorite);
   const dispatch = useDispatch();
-  const isFavorite = favorite.some((e) => e.id === id);
+  const isFavorite = favorite.some(e => e.id === id);
   const auth = useAuth();
   const handleReadMore = () => {
     setIsReadMore(true);
   };
   const handleFavorite = () => {
     if (!auth.isLoggedIn) {
-      toast.error("Please enter LogIn or Registration ");
+      toast.error('Please enter LogIn or Registration ');
       return;
     }
     if (!isFavorite && auth.isLoggedIn) {
@@ -80,9 +80,9 @@ export const TeachersCard = (props) => {
       <WrapDiscrp>
         <WrapHeart onClick={() => handleFavorite()}>
           {isFavorite && auth.isLoggedIn ? (
-            <Heart fill={"#F4C550"} />
+            <Heart fill={'#F4C550'} />
           ) : (
-            <Heart fill={"transparent"} />
+            <Heart fill={'transparent'} />
           )}
         </WrapHeart>
         <Statistic>
@@ -111,7 +111,7 @@ export const TeachersCard = (props) => {
         </NameTeacher>
         <WrapListDiscrp>
           <StyleLiDiscrp>
-            Speaks:&nbsp;<SpanDiscrp>{languages.join(", ")}</SpanDiscrp>
+            Speaks:&nbsp;<SpanDiscrp>{languages.join(', ')}</SpanDiscrp>
           </StyleLiDiscrp>
           <StyleLiDiscrp>
             Lesson Info:&nbsp;
@@ -119,7 +119,7 @@ export const TeachersCard = (props) => {
           </StyleLiDiscrp>
           <StyleLiDiscrp>
             Conditions:&nbsp;
-            <SpanDiscrp>{conditions.join(", ")}</SpanDiscrp>
+            <SpanDiscrp>{conditions.join(', ')}</SpanDiscrp>
           </StyleLiDiscrp>
         </WrapListDiscrp>
         {!isReadMore && (
@@ -134,7 +134,9 @@ export const TeachersCard = (props) => {
             <LiLevels key={idx}>#{level}</LiLevels>
           ))}
         </ListLevel>
-        {isReadMore && <BtnTrialLesson setNamePopUp={setNamePopUp} />}
+        {isReadMore && (
+          <BtnTrialLesson {...props} setNamePopUp={setNamePopUp} />
+        )}
       </WrapDiscrp>
     </WrapCard>
   );
