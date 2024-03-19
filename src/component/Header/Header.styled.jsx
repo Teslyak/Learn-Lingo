@@ -8,12 +8,13 @@ export const Links = styled(NavLink)`
 
 export const Wrap = styled.header`
   max-width: 1184px;
-  //height: 48px;
+
   margin: 0 auto;
   display: flex;
-  gap: 28px;
-  padding: 20px 64px;
+  padding: 20px 0;
   justify-content: center;
+  flex-wrap: wrap;
+  justify-content: space-between;
 `;
 
 export const LinksTitlte = styled(NavLink)`
@@ -85,8 +86,12 @@ export const Span = styled.span`
 
 export const WrapLogoHome = styled.div`
   display: flex;
-  gap: 390px;
+  gap: 27.083333333333332vw;
   align-items: center;
+  div {
+    display: flex;
+    gap: 28px;
+  }
 `;
 
 export const WrapTeachersLogin = styled.div`

@@ -1,9 +1,12 @@
-import styled from "styled-components";
-import { colors } from "../../constants";
-import border from "../../assets/img/DashedBorderPNG.png";
+import styled from 'styled-components';
+import { colors } from '../../constants';
+import border from '../../assets/img/DashedBorderPNG.png';
 
 export const WrapContainer = styled.div`
   padding: 0px 64px 32px 64px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `;
 
 export const Wrap = styled.div`
@@ -12,6 +15,8 @@ export const Wrap = styled.div`
   display: flex;
   gap: 24px;
   margin-bottom: 24px;
+  display: flex;
+  justify-content: center;
 `;
 
 export const BlockDiscriptions = styled.div`
@@ -25,7 +30,7 @@ export const BlockDiscriptions = styled.div`
 `;
 
 export const Title = styled.h1`
-  width: 548px;
+  max-width: 548px;
   text-align: start;
   margin-bottom: 32px;
 `;
@@ -38,7 +43,7 @@ export const Discrp = styled.p`
   font-weight: 400;
   line-height: 22px;
   letter-spacing: -0.32px;
-  width: 471px;
+  max-width: 471px;
 `;
 export const Button = styled.button`
   border-radius: 12px;
@@ -63,6 +68,7 @@ export const BlockImages = styled.div`
   border-radius: 30px;
   background: ${colors.LIGHT_YELLOW};
   padding: 80px 118px 117px 114px;
+  display: flex;
 `;
 export const Sticker = styled.img`
   max-width: 336px;
@@ -109,6 +115,7 @@ export const UnionDiv = styled.div`
 export const AppelDiv = styled.div`
   position: absolute;
   left: 260.56px;
+  top: 400px;
 `;
 
 export const StatisticList = styled.ul`
@@ -119,11 +126,12 @@ export const StatisticList = styled.ul`
   height: 116px;
   gap: 100px;
   background-image: url(${border});
-  background-size: cover;
+  background-size: 100%;
 `;
 export const Experienced = styled.li`
   display: flex;
   gap: 16px;
+  flex-wrap: wrap;
 `;
 export const Number = styled.p`
   font-size: 28px;
@@ -138,5 +146,5 @@ export const DiscrpStat = styled.p`
   line-height: 18px;
   letter-spacing: -0.28px;
   text-align: start;
-  width: ${(props) => props.width || "96px"};
+  width: ${props => props.width || '96px'};
 `;

@@ -39,11 +39,17 @@ export const Header = ({ setNamePopUp }) => {
           </Links>
           <LinksTitlte to="/">LearnLingo</LinksTitlte>
         </WrapLogo>
-        <LinksPages to="/">Home</LinksPages>
+        <div>
+          <LinksPages to="/">Home</LinksPages>
+          <LinksPages to="teachers">Teachers</LinksPages>
+        </div>
       </WrapLogoHome>
 
-      <WrapTeachersLogin style={{ gap: isLoggedIn ? '110px' : '268px' }}>
-        <LinksPages to="teachers">Teachers</LinksPages>
+      <WrapTeachersLogin
+        style={{
+          gap: isLoggedIn ? '5.555555555555555vw' : '18.61111111111111vw',
+        }}
+      >
         {isLoggedIn && <LinksPages to="favorites">Favorites</LinksPages>}
         {isLoggedIn ? (
           <UserMenu />

@@ -1,8 +1,8 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const WrapCard = styled.li`
-  width: 1184px;
-  padding: 24px;
+  max-width: 82.22222222222221vw;
+  padding: 1.6666666666666667vw;
   border-radius: 24px;
   background: rgb(255, 255, 255);
   display: flex;
@@ -45,6 +45,7 @@ export const Statistic = styled.div``;
 export const ListStatistic = styled.ul`
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
   & > :first-child {
     color: rgb(138, 138, 137);
     margin-bottom: 8px;
@@ -158,6 +159,7 @@ export const BtnReadMore = styled.button`
 export const ListLevel = styled.ul`
   display: flex;
   gap: 8px;
+  flex-wrap: wrap;
   & > :first-child {
     background: rgb(244, 197, 80);
     border: none;
