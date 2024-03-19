@@ -44,6 +44,7 @@ export const WrapButton = styled.div`
   display: flex;
   align-items: center;
   gap: 16px;
+  margin-left: 18.61111111111111vw;
 `;
 export const ButtonLogin = styled.button`
   height: 48px;
@@ -86,7 +87,7 @@ export const WrapLogoHome = styled.div`
   display: flex;
   gap: 390px;
   align-items: center;
-  margin-right: 30px;
+
   div {
     display: flex;
     gap: 28px;
