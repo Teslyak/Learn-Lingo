@@ -36,6 +36,8 @@ export const LinksPages = styled(NavLink)`
   font-weight: 400;
   line-height: 20px;
   max-width: 66px;
+  margin-left: 30px;
+
   &.active {
     font-weight: 500;
   }
