@@ -7,14 +7,12 @@ export const Links = styled(NavLink)`
 `;
 
 export const Wrap = styled.header`
-  max-width: 1184px;
-
+  max-width: 82.22222222222221vw;
   margin: 0 auto;
   display: flex;
   padding: 20px 0;
   justify-content: center;
   flex-wrap: wrap;
-  justify-content: space-between;
 `;
 
 export const LinksTitlte = styled(NavLink)`
@@ -86,8 +84,9 @@ export const Span = styled.span`
 
 export const WrapLogoHome = styled.div`
   display: flex;
-  gap: 27.083333333333332vw;
+  gap: 390px;
   align-items: center;
+  margin-right: 30px;
   div {
     display: flex;
     gap: 28px;

@@ -11,12 +11,12 @@ export const WrapContainer = styled.div`
 
 export const Wrap = styled.div`
   width: 100%;
-
   display: flex;
   gap: 24px;
   margin-bottom: 24px;
-  display: flex;
   justify-content: center;
+
+  flex-wrap: wrap;
 `;
 
 export const BlockDiscriptions = styled.div`
@@ -27,6 +27,8 @@ export const BlockDiscriptions = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  flex-grow: 1;
+  flex-basis: 5%;
 `;
 
 export const Title = styled.h1`
