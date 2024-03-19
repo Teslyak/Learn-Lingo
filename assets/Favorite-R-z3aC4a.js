@@ -1,4 +1,4 @@
-import{u as e,a as r,d as n,j as t}from"./index-lcdae8gF.js";import{T as a}from"./TeachersCard-CtexlOJy.js";const c=e.ul`
+import{u as e,a as r,d as n,j as t}from"./index-CvmtCzoC.js";import{T as a}from"./TeachersCard-DCoMlsOZ.js";const c=e.ul`
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -7,8 +7,7 @@ import{u as e,a as r,d as n,j as t}from"./index-lcdae8gF.js";import{T as a}from"
   padding: 96px 128px 96px 128px;
 `,l=({setNamePopUp:i})=>{const s=r(n);return t.jsx(c,{children:s.map(o=>t.jsx(a,{...o,setNamePopUp:i},o.id))})},p=e.div`
   position: relative;
-  width: 1440px;
- 
+  max-width: 100vw;
 `,x=e.div`
   display: flex;
   justify-content: center;
@@ -21,4 +20,4 @@ import{u as e,a as r,d as n,j as t}from"./index-lcdae8gF.js";import{T as a}from"
   font-size: 48px;
   font-weight: 400;
   color: rgb(188, 199, 210);
-`,f=()=>t.jsx(x,{children:t.jsx(d,{children:"No favorites"})});function v({setNamePopUp:i}){const s=r(n);return t.jsx(p,{children:s.length>0?t.jsx(l,{setNamePopUp:i}):t.jsx(f,{})})}export{v as default};
+`,f=()=>t.jsx(x,{children:t.jsx(d,{children:"No favorites"})});function h({setNamePopUp:i}){const s=r(n);return t.jsx(p,{children:s.length>0?t.jsx(l,{setNamePopUp:i}):t.jsx(f,{})})}export{h as default};
