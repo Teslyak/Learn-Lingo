@@ -1,13 +1,13 @@
-import styled from "styled-components";
-import { colors } from "../../constants";
-import { Field } from "formik";
+import styled from 'styled-components';
+import { colors } from '../../constants';
+import { Field } from 'formik';
 
 export const WrapLogin = styled.div`
   position: relative;
-  width: 566px;
+  max-width: 566px;
   height: 506px;
   background-color: #fff;
-  padding: 64px;
+  padding: 4.444vw;
   border-radius: 30px;
   background: rgb(255, 255, 255);
 `;
@@ -45,7 +45,7 @@ export const Input = styled(Field)`
   &::placeholder {
     color: ${colors.BLACK_TEXT};
   }
-  margin-bottom: ${(props) => props.marginbottom || "18px"};
+  margin-bottom: ${props => props.marginbottom || '18px'};
 `;
 
 export const ButtonSubmit = styled.button`

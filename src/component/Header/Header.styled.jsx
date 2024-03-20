@@ -7,17 +7,18 @@ export const Links = styled(NavLink)`
 `;
 
 export const Wrap = styled.header`
-  max-width: 82.22222222222221vw;
+  max-width: 1184px;
   margin: 0 auto;
   display: flex;
-  padding: 20px 0;
-  justify-content: center;
+  padding: 20px 20px;
+  justify-content: space-between;
   flex-wrap: wrap;
 `;
 
 export const LinksTitlte = styled(NavLink)`
   color: rgb(18, 20, 23);
-  font-size: 20px;
+  //font-size: 20px;
+  font-size: calc(12px + (20 - 12) * ((100vw - 320px) / (1440 - 320)));
   font-weight: 500;
   line-height: 24px;
   letter-spacing: -0.333px;
@@ -29,14 +30,19 @@ export const WrapLogo = styled.div`
   align-items: center;
   gap: 8px;
 `;
+export const WrapLinksPage = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 28px;
+`;
 
 export const LinksPages = styled(NavLink)`
   color: ${colors.BLACK_TEXT};
-  font-size: 16px;
+  //font-size: 16px;
+  font-size: calc(12px + (20 - 12) * ((100vw - 320px) / (1440 - 320)));
   font-weight: 400;
   line-height: 20px;
   max-width: 66px;
-  margin-left: 30px;
 
   &.active {
     font-weight: 500;
@@ -46,7 +52,6 @@ export const WrapButton = styled.div`
   display: flex;
   align-items: center;
   gap: 16px;
-  margin-left: 18.61111111111111vw;
 `;
 export const ButtonLogin = styled.button`
   height: 48px;
@@ -57,7 +62,8 @@ export const ButtonLogin = styled.button`
   align-items: center;
   gap: 8px;
   color: ${colors.BLACK_TEXT};
-  font-size: 16px;
+  // font-size: 16px;
+  font-size: calc(12px + (20 - 12) * ((100vw - 320px) / (1440 - 320)));
   font-weight: 700;
   line-height: 20px;
   text-align: left;
@@ -73,11 +79,13 @@ export const ButtonRegister = styled.button`
   background: rgb(18, 20, 23);
   color: ${colors.WHITE};
   font-family: Roboto;
-  font-size: 16px;
+  // font-size: 16px;
+  font-size: calc(12px + (16 - 12) * ((100vw - 320px) / (1440 - 320)));
   font-weight: 700;
   line-height: 20px;
   cursor: pointer;
-  padding: 14px 39px 14px 39px;
+  //padding: 14px 39px 14px 39px;
+  padding: 0.972vw 2.708vw 0.972vw 2.708vw;
 `;
 
 export const Span = styled.span`
@@ -89,11 +97,6 @@ export const WrapLogoHome = styled.div`
   display: flex;
   gap: 390px;
   align-items: center;
-
-  div {
-    display: flex;
-    gap: 28px;
-  }
 `;
 
 export const WrapTeachersLogin = styled.div`

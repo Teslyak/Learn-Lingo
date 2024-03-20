@@ -10,6 +10,7 @@ import {
   Span,
   Wrap,
   WrapButton,
+  WrapLinksPage,
   WrapLogo,
   WrapLogoHome,
   WrapTeachersLogin,
@@ -39,18 +40,15 @@ export const Header = ({ setNamePopUp }) => {
           </Links>
           <LinksTitlte to="/">LearnLingo</LinksTitlte>
         </WrapLogo>
-        <div>
-          <LinksPages to="/">Home</LinksPages>
-          <LinksPages to="teachers">Teachers</LinksPages>
-        </div>
       </WrapLogoHome>
 
-      <WrapTeachersLogin
-        style={{
-          gap: isLoggedIn ? '5.555555555555555vw' : '18.61111111111111vw',
-        }}
-      >
+      <WrapLinksPage>
+        <LinksPages to="/">Home</LinksPages>
+        <LinksPages to="teachers">Teachers</LinksPages>
         {isLoggedIn && <LinksPages to="favorites">Favorites</LinksPages>}
+      </WrapLinksPage>
+
+      <WrapTeachersLogin>
         {isLoggedIn ? (
           <UserMenu />
         ) : (

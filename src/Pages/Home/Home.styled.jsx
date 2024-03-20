@@ -23,7 +23,7 @@ export const BlockDiscriptions = styled.div`
   max-width: 720px;
   border-radius: 30px;
   background: ${colors.SILVER_BACKGROUND};
-  padding: 98px 108px 98px 64px;
+  padding: 6.806vw 7.5vw 6.806vw 4.444vw;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -54,7 +54,8 @@ export const Button = styled.button`
   height: 60px;
   color: rgb(18, 20, 23);
   font-family: Roboto;
-  font-size: 18px;
+  //font-size: 18px;
+  font-size: calc(14px + (18 - 14) * ((100vw - 320px) / (1440 - 320)));
   font-weight: 700;
   line-height: 28px;
   text-align: center;
@@ -83,13 +84,15 @@ export const SpanLang = styled.span`
   max-width: 195px;
   font-style: italic;
   letter-spacing: -0.96px;
-  font-size: 48px;
+  //font-size: 48px;
+  font-size: calc(32px + (48 - 32) * ((100vw - 320px) / (1440 - 320)));
   font-weight: 400;
 `;
 
 export const Span = styled.span`
   color: ${colors.BLACK_TEXT};
-  font-size: 48px;
+  //font-size: 48px;
+  font-size: calc(32px + (48 - 32) * ((100vw - 320px) / (1440 - 320)));
   font-weight: 500;
   line-height: 56px;
   text-align: start;
@@ -98,7 +101,8 @@ export const Span = styled.span`
 `;
 export const SpanTheBest = styled.span`
   color: ${colors.BLACK_TEXT};
-  font-size: 48px;
+  //font-size: 48px;
+  font-size: calc(32px + (48 - 32) * ((100vw - 320px) / (1440 - 320)));
   font-weight: 500;
   line-height: 56px;
   letter-spacing: -0.96;
