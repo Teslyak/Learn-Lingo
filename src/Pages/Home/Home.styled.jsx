@@ -28,7 +28,7 @@ export const BlockDiscriptions = styled.div`
   flex-direction: column;
   align-items: flex-start;
   flex-grow: 1;
-  flex-basis: 5%;
+  flex-basis: 10%;
 `;
 
 export const Title = styled.h1`
@@ -71,7 +71,6 @@ export const BlockImages = styled.div`
   border-radius: 30px;
   background: ${colors.LIGHT_YELLOW};
   padding: 80px 118px 117px 114px;
-  display: flex;
 `;
 export const Sticker = styled.img`
   max-width: 336px;

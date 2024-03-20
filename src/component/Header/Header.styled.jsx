@@ -17,8 +17,8 @@ export const Wrap = styled.header`
 
 export const LinksTitlte = styled(NavLink)`
   color: rgb(18, 20, 23);
-  //font-size: 20px;
-  font-size: calc(12px + (20 - 12) * ((100vw - 320px) / (1440 - 320)));
+  font-size: 20px;
+  //font-size: calc(12px + (20 - 12) * ((100vw - 320px) / (1440 - 320)));
   font-weight: 500;
   line-height: 24px;
   letter-spacing: -0.333px;
@@ -38,8 +38,8 @@ export const WrapLinksPage = styled.div`
 
 export const LinksPages = styled(NavLink)`
   color: ${colors.BLACK_TEXT};
-  //font-size: 16px;
-  font-size: calc(12px + (20 - 12) * ((100vw - 320px) / (1440 - 320)));
+  font-size: 16px;
+  /* font-size: calc(12px + (20 - 12) * ((100vw - 320px) / (1440 - 320))); */
   font-weight: 400;
   line-height: 20px;
   max-width: 66px;
@@ -62,8 +62,8 @@ export const ButtonLogin = styled.button`
   align-items: center;
   gap: 8px;
   color: ${colors.BLACK_TEXT};
-  // font-size: 16px;
-  font-size: calc(12px + (20 - 12) * ((100vw - 320px) / (1440 - 320)));
+  font-size: 16px;
+  //font-size: calc(12px + (20 - 12) * ((100vw - 320px) / (1440 - 320)));
   font-weight: 700;
   line-height: 20px;
   text-align: left;
@@ -73,19 +73,18 @@ export const ButtonLogin = styled.button`
 `;
 export const ButtonRegister = styled.button`
   height: 48px;
-  max-width: 166px;
+  width: 166px;
   border: none;
   border-radius: 12px;
   background: rgb(18, 20, 23);
   color: ${colors.WHITE};
   font-family: Roboto;
-  // font-size: 16px;
-  font-size: calc(12px + (16 - 12) * ((100vw - 320px) / (1440 - 320)));
+  font-size: 16px;
+  //font-size: calc(12px + (16 - 12) * ((100vw - 320px) / (1440 - 320)));
   font-weight: 700;
   line-height: 20px;
   cursor: pointer;
-  //padding: 14px 39px 14px 39px;
-  padding: 0.972vw 2.708vw 0.972vw 2.708vw;
+  padding: 14px 39px 14px 39px;
 `;
 
 export const Span = styled.span`
