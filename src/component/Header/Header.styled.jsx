@@ -10,7 +10,7 @@ export const Wrap = styled.header`
   max-width: 1184px;
   margin: 0 auto;
   display: flex;
-  padding: 20px 20px;
+  padding: 20px 0;
   justify-content: space-between;
   flex-wrap: wrap;
 `;

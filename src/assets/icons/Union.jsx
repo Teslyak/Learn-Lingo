@@ -1,7 +1,7 @@
 export const Union = () => {
   return (
     <svg
-      width="359.719971"
+      width="100%"
       height="247.251221"
       viewBox="0 0 359.72 247.251"
       fill="none"

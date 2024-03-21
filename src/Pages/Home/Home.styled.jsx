@@ -29,6 +29,9 @@ export const BlockDiscriptions = styled.div`
   align-items: flex-start;
   flex-grow: 1;
   flex-basis: 10%;
+  @media screen and (max-width: 1120px) {
+    max-width: 568px;
+  }
 `;
 
 export const Title = styled.h1`
@@ -67,14 +70,22 @@ export const Button = styled.button`
 
 export const BlockImages = styled.div`
   position: relative;
-  max-width: 568px;
+  width: 568px;
   border-radius: 30px;
   background: ${colors.LIGHT_YELLOW};
   padding: 80px 118px 117px 114px;
+  @media screen and (max-width: 1120px) {
+    height: 530px;
+  }
+  @media screen and (max-width: 700px) {
+    width: 81.143vw;
+  }
 `;
 export const Sticker = styled.img`
-  max-width: 336px;
-  max-height: 333px;
+  position: absolute;
+  max-width: 100%;
+  max-height: 100%;
+  bottom: 117px;
 `;
 
 export const SpanLang = styled.span`
@@ -111,16 +122,26 @@ export const SpanTheBest = styled.span`
 
 export const UnionDiv = styled.div`
   position: absolute;
-  height: 176px;
+  max-width: 359.719971px;
+  max-height: 176px;
   overflow: hidden;
-  top: 354px;
+  bottom: 0;
+  right: 103.64px;
   left: 103.64px;
+  @media screen and (max-width: 700px) {
+    bottom: 0;
+    right: 50%;
+    left: 50%;
+    transform: translate(50%, 50%);
+  }
 `;
 
 export const AppelDiv = styled.div`
   position: absolute;
   left: 260.56px;
-  top: 400px;
+  right: 260.56px;
+  bottom: 54.95px;
+  top: 419.27px;
 `;
 
 export const StatisticList = styled.ul`
