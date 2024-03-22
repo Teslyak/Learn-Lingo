@@ -89,22 +89,24 @@ export const TeachersCard = ({ setNamePopUp, ...props }) => {
         <Statistic>
           <ListStatistic>
             <StyleLi>Languages</StyleLi>
-            <StyleLi>
-              <WrapSvgLessonBook>
-                <LessonBook />
-              </WrapSvgLessonBook>
-              Lessons online
-            </StyleLi>
-            <StyleLi>Lessons done:&nbsp;{lessons_done}</StyleLi>
-            <StyleLi>
-              <WrapStar>
-                <StarCard />
-              </WrapStar>
-              Rating:&nbsp;{rating}
-            </StyleLi>
-            <StyleLi>
-              Price / 1 hour:&nbsp;<SpanPrice>{price_per_hour}$</SpanPrice>
-            </StyleLi>
+            <div>
+              <StyleLi>
+                <WrapSvgLessonBook>
+                  <LessonBook />
+                </WrapSvgLessonBook>
+                Lessons online
+              </StyleLi>
+              <StyleLi>Lessons done:&nbsp;{lessons_done}</StyleLi>
+              <StyleLi>
+                <WrapStar>
+                  <StarCard />
+                </WrapStar>
+                Rating:&nbsp;{rating}
+              </StyleLi>
+              <StyleLi>
+                Price / 1 hour:&nbsp;<SpanPrice>{price_per_hour}$</SpanPrice>
+              </StyleLi>
+            </div>
           </ListStatistic>
         </Statistic>
         <NameTeacher>

@@ -1,11 +1,11 @@
-import styled, { StyleSheetManager } from "styled-components";
+import styled, { StyleSheetManager } from 'styled-components';
 export const ExperienceStyle = styled.p`
   color: rgb(18, 20, 23);
   font-size: 16px;
   font-weight: 400;
   line-height: 24px;
   text-align: left;
-  width: 968px;
+  max-width: 968px;
   margin-bottom: 32px;
 `;
 
@@ -23,7 +23,7 @@ export const WrapReviewerAvatar = styled.div`
   height: 44px;
   background-size: cover;
   border-radius: 100px;
-  background-image: url(${(props) => props.avatarUrl});
+  background-image: url(${props => props.avatarUrl});
   background-position: 50%;
 `;
 
@@ -67,7 +67,7 @@ export const Comment = styled.p`
 `;
 
 const MyStyleSheetManager = ({ children }) => (
-  <StyleSheetManager shouldForwardProp={(prop) => prop !== "avatarUrl"}>
+  <StyleSheetManager shouldForwardProp={prop => prop !== 'avatarUrl'}>
     {children}
   </StyleSheetManager>
 );

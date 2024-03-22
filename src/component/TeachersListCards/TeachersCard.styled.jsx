@@ -1,18 +1,19 @@
 import styled from 'styled-components';
 
 export const WrapCard = styled.li`
-  max-width: 82.22222222222221vw;
-  padding: 1.6666666666666667vw;
+  width: 100%;
+  padding: 24px;
   border-radius: 24px;
   background: rgb(255, 255, 255);
   display: flex;
   position: relative;
   gap: 48px;
+  flex-wrap: wrap;
 `;
 
 export const WrapAvatar = styled.div`
   position: relative;
-  width: 120px;
+  min-width: 120px;
   height: 120px;
   border: 3px solid rgb(251, 233, 186);
   border-radius: 100px;
@@ -44,8 +45,37 @@ export const Statistic = styled.div``;
 
 export const ListStatistic = styled.ul`
   display: flex;
-  align-items: center;
   flex-wrap: wrap;
+  div {
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+    text-align: left;
+    & > :nth-child(1) {
+      gap: 6px;
+    }
+
+    & > :not(:last-child) {
+      padding-right: 16px;
+      border-right: 1px solid rgba(18, 20, 23, 0.2);
+    }
+    & > :nth-child(4) {
+      padding-right: 0;
+      padding-left: 16px;
+      border-right: none;
+    }
+    & > :nth-child(3) {
+      display: flex;
+      gap: 6px;
+      padding-left: 16px;
+    }
+    & > :nth-child(2) {
+      padding-left: 16px;
+    }
+  }
+
   & > :first-child {
     color: rgb(138, 138, 137);
     margin-bottom: 8px;
@@ -56,36 +86,9 @@ export const ListStatistic = styled.ul`
     text-align: left;
     margin-right: 192px;
   }
-  & > :nth-child(2) {
-    display: flex;
-    gap: 6px;
-    align-items: center;
-  }
-
-  & > :not(:first-child) {
-    font-size: 16px;
-    font-weight: 500;
-    line-height: 24px;
-    text-align: left;
-    padding-right: 16px;
-    border-right: 1px solid rgba(18, 20, 23, 0.2);
-  }
-
-  & > :nth-child(5) {
-    padding-right: 0;
-    padding-left: 16px;
-    border-right: none;
-  }
-  & > :nth-child(4) {
-    display: flex;
-    gap: 6px;
-    padding-left: 16px;
-  }
-  & > :nth-child(3) {
-    padding-left: 16px;
-  }
 `;
 export const StyleLi = styled.li`
+  display: flex;
   align-items: center;
 `;
 
@@ -138,7 +141,8 @@ export const WrapListDiscrp = styled.ul`
 `;
 
 export const StyleLiDiscrp = styled.li`
-  font-size: 16px;
+  //font-size: 16px;
+  font-size: calc(12px + (16 - 12) * ((100vw - 320px) / (1440 - 320)));
   font-weight: 500;
   line-height: 24px;
   color: rgb(138, 138, 137);
