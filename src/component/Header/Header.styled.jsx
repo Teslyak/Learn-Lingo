@@ -7,12 +7,15 @@ export const Links = styled(NavLink)`
 `;
 
 export const Wrap = styled.header`
-  max-width: 1184px;
+  width: 100%;
   margin: 0 auto;
   display: flex;
-  padding: 20px 0;
+  padding: 20px 128px;
   justify-content: space-between;
   flex-wrap: wrap;
+  @media screen and (max-width: 560px) {
+    padding: 20px 15px;
+  }
 `;
 
 export const LinksTitlte = styled(NavLink)`

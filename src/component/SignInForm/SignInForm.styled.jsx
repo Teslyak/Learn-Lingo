@@ -1,19 +1,20 @@
-import styled from "styled-components";
-import { colors } from "../../constants";
-import { Field } from "formik";
+import styled from 'styled-components';
+import { colors } from '../../constants';
+import { Field } from 'formik';
 
 export const WrapLogin = styled.div`
   position: relative;
-  width: 566px;
+  max-width: 566px;
   background-color: #fff;
-  padding: 64px;
+  padding: 64px 4.444vw 64px 4.444vw;
   border-radius: 30px;
   background: rgb(255, 255, 255);
 `;
 
 export const Title = styled.h3`
   color: ${colors.BLACK_TEXT};
-  font-size: 40px;
+  //font-size: 40px;
+  font-size: calc(28px + (40 - 28) * ((100vw - 320px) / (1440 - 320)));
   font-weight: 500;
   line-height: 48px;
   letter-spacing: -0.8px;
@@ -23,7 +24,8 @@ export const Title = styled.h3`
 
 export const Discrp = styled.p`
   color: ${colors.BLACK_TEXT};
-  font-size: 16px;
+  //font-size: 16px;
+  font-size: calc(12px + (16 - 12) * ((100vw - 320px) / (1440 - 320)));
   font-weight: 400;
   line-height: 22px;
   text-align: start;
@@ -33,7 +35,7 @@ export const Discrp = styled.p`
 export const Input = styled(Field)`
   border: 1px solid rgba(18, 20, 23, 0.1);
   border-radius: 12px;
-  width: 438px;
+  width: 100%;
   height: 54px;
   color: rgb(18, 20, 23);
   font-size: 16px;
@@ -47,7 +49,7 @@ export const Input = styled(Field)`
 `;
 
 export const ButtonSubmit = styled.button`
-  width: 438px;
+  width: 100%;
   height: 60px;
   border-radius: 12px;
   background-color: ${colors.YELLOW_BUTTON};

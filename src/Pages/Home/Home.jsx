@@ -1,25 +1,20 @@
-import { Appel } from '../../assets/icons/Appel';
-import { Union } from '../../assets/icons/Union';
 import {
-  AppelDiv,
   BlockDiscriptions,
-  BlockImages,
   Button,
   Discrp,
   DiscrpStat,
   Experienced,
+  HeroImg,
   Number,
   Span,
   SpanLang,
   SpanTheBest,
   StatisticList,
-  Sticker,
   Title,
-  UnionDiv,
   Wrap,
   WrapContainer,
 } from './Home.styled';
-import stickerImage from '../../assets/img/sticker.png';
+import heroImg from '../../assets/img/heroImg.png';
 import { Link } from 'react-router-dom';
 
 export default function Home() {
@@ -43,15 +38,8 @@ export default function Home() {
               <Button type="button">Get started</Button>
             </Link>
           </BlockDiscriptions>
-          <BlockImages>
-            <Sticker src={stickerImage} alt="sticker" />
-            <UnionDiv>
-              <Union />
-            </UnionDiv>
-            <AppelDiv>
-              <Appel />
-            </AppelDiv>
-          </BlockImages>
+
+          <HeroImg src={heroImg} alt="sticker" />
         </Wrap>
 
         <StatisticList>

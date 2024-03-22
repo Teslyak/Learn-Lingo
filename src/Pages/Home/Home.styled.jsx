@@ -1,12 +1,14 @@
 import styled from 'styled-components';
 import { colors } from '../../constants';
-import border from '../../assets/img/DashedBorderPNG.png';
 
 export const WrapContainer = styled.div`
   padding: 0px 64px 32px 64px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  @media screen and (max-width: 1158px) {
+    padding: 0px 15px 32px 15px;
+  }
 `;
 
 export const Wrap = styled.div`
@@ -23,14 +25,17 @@ export const BlockDiscriptions = styled.div`
   max-width: 720px;
   border-radius: 30px;
   background: ${colors.SILVER_BACKGROUND};
-  padding: 6.806vw 7.5vw 6.806vw 4.444vw;
+  padding: 98px 108px 98px 64px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   flex-grow: 1;
-  flex-basis: 10%;
-  @media screen and (max-width: 1120px) {
+  flex-basis: 40%;
+  @media screen and (max-width: 1158px) {
     max-width: 568px;
+  }
+  @media screen and (max-width: 1016px) {
+    padding: 98px 20px 98px 20px;
   }
 `;
 
@@ -68,24 +73,8 @@ export const Button = styled.button`
   }
 `;
 
-export const BlockImages = styled.div`
-  position: relative;
-  width: 568px;
-  border-radius: 30px;
-  background: ${colors.LIGHT_YELLOW};
-  padding: 80px 118px 117px 114px;
-  @media screen and (max-width: 1120px) {
-    height: 530px;
-  }
-  @media screen and (max-width: 700px) {
-    width: 81.143vw;
-  }
-`;
-export const Sticker = styled.img`
-  position: absolute;
+export const HeroImg = styled.img`
   max-width: 100%;
-  max-height: 100%;
-  bottom: 117px;
 `;
 
 export const SpanLang = styled.span`
@@ -115,44 +104,21 @@ export const SpanTheBest = styled.span`
   font-size: calc(32px + (48 - 32) * ((100vw - 320px) / (1440 - 320)));
   font-weight: 500;
   line-height: 56px;
-  letter-spacing: -0.96;
+  letter-spacing: -0.96px;
   text-align: start;
   font-style: normal;
 `;
 
-export const UnionDiv = styled.div`
-  position: absolute;
-  max-width: 359.719971px;
-  max-height: 176px;
-  overflow: hidden;
-  bottom: 0;
-  right: 103.64px;
-  left: 103.64px;
-  @media screen and (max-width: 700px) {
-    bottom: 0;
-    right: 50%;
-    left: 50%;
-    transform: translate(50%, 50%);
-  }
-`;
-
-export const AppelDiv = styled.div`
-  position: absolute;
-  left: 260.56px;
-  right: 260.56px;
-  bottom: 54.95px;
-  top: 419.27px;
-`;
-
 export const StatisticList = styled.ul`
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
-  width: 1312px;
-  height: 116px;
-  gap: 100px;
-  background-image: url(${border});
-  background-size: 100%;
+  width: 100%;
+  min-height: 116px;
+
+  flex-wrap: wrap;
+  border: 1.5px dashed rgb(244, 197, 80);
+  border-radius: 30px;
 `;
 export const Experienced = styled.li`
   display: flex;
@@ -164,6 +130,7 @@ export const Number = styled.p`
   font-weight: 500;
   line-height: 32px;
   letter-spacing: -0.56px;
+  flex-wrap: wrap;
 `;
 export const DiscrpStat = styled.p`
   color: ${colors.BLACK_TEXT};
@@ -173,4 +140,5 @@ export const DiscrpStat = styled.p`
   letter-spacing: -0.28px;
   text-align: start;
   width: ${props => props.width || '96px'};
+  flex-wrap: wrap;
 `;
